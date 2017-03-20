@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>SaaS Nomad</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/tonystar/float-label-css/v1.0.2/dist/float-label.min.css"/>
+    <link rel="stylesheet" href="css/piecharts.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <style>
+    ::selection {
+      background-color: #CDDC39;;
+      color: #323336;
+    }
+    #main{
+      height:730px;
+      color: #fff;
+      background: url(img/background.jpg) no-repeat center center fixed; 
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+    .first-half {
+      height:630px;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    .first-half .content-left{
+      width: 80%;
+      margin: 200px auto auto auto;
+      text-align: right;
+    }
+    .second-half .content-right{
+      width: 80%;
+      margin: 200px auto auto auto;
+      color: #363942;
+    }
+    .second-half{
+      height:630px;
+      background: rgba(255,255,255, 0.6);
+    }
+    .first-half h1, .second-half h1{ 
+      font-family: 'Raleway', sans-serif;
+      font-weight: 100;
+      font-size: 45px;
+      line-height: 1.3;
+      margin-bottom: 40px;
+      letter-spacing: 1.5px;
+    }
+    #top-bar{
+      height:100px;
+    }
+    #top-bar .search-bar, #top-bar .logo .logo-left{
+      height:100px;
+      background: rgba(0, 0, 0, 0.5);
+    } 
+    #top-bar .logo .logo-right, #top-bar .registration{
+      height:100px;
+      background: rgba(255,255,255, 0.6);
+
+    }
+    #top-bar ul{
+      list-style: none;
+      padding-top: 35px;
+      padding-left: 100px;
+    }
+    #top-bar ul li{
+      display: inline-block;
+      margin-right: 40px;
+    }
+    #top-bar ul li a{
+      color: #fff;
+      font-size: 14px;
+      letter-spacing: 1.3px;
+      font-weight: 400;
+    }
+    #top-bar ul li a{
+      color: #fff;
+      font-size: 14px;
+      letter-spacing: 1.3px;
+      font-weight: 400;
+    }
+    #top-bar ul li .trigger-login, #top-bar ul li .trigger-signup {
+      color: #363942;
+    }
+    #top-bar ul li .trigger-signup {
+      border-radius: 4px;
+      vertical-align: middle;
+      border: 1px solid #363942;
+      padding: 8px 12px;
+    }
+    #top-bar ul li a, #top-bar ul li a:hover, #top-bar ul li a:focus {
+      text-decoration: none;
+      outline: none;
+    }
+    #top-bar ul li a .glyphicon{
+      margin-right: 13px;
+    }
+    /* .modal-fullscreen */
+
+    /*.modal-fullscreen {
+      background: rgba(0, 0, 0, 0.9);
+      font-family: 'Raleway', sans-serif;
+    }
+    .modal-fullscreen .modal-content {
+      background: rgba(0, 0, 0, 0);
+      border: 0;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      margin-top: 20px;
+    }*/
+    .modal-fullscreen .modal-footer, .modal-fullscreen .modal-header {
+      border: none;
+    }
+    #searchbusiness {
+      background: none;
+      border: none;
+      padding: 5px 0;
+      color: #fff;
+      font-size: 48px;
+      font-weight: 100;
+      outline: none;
+      margin-left: 20px;
+      display: inline-block;
+      vertical-align: middle;
+      height: 70px;
+    }
+    #searchbusiness:focus{
+        border-color: none;
+        outline: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+    .search-box {
+      background: none;
+      border: none;
+      padding: 5px 0;
+      color: #00BCD4;
+      font-size: 24px;
+      font-weight: 100;
+      outline: none;
+      margin-left: 20px;
+      vertical-align: middle;
+      height: 30px;
+    }
+    .modal-backdrop.modal-backdrop-fullscreen {
+      background: #ffffff;
+    }
+    .modal-backdrop.modal-backdrop-fullscreen.in {
+      opacity: .97;
+      filter: alpha(opacity=97);
+    }
+    .close {
+      color: #fff;
+      float: right;
+    }
+    .btn-cyan, .btn-lime  {
+      background: #00BCD4;
+      color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 10px rgba(0, 0, 0, 0.12);
+      -webkit-border-radius: 2px;
+      -moz-border-radius: 2px;
+      -ms-border-radius: 2px;
+      border-radius: 2px;
+      border: none;
+      padding: 15px 28px;
+      font-weight: 600;
+      font-size: 14px;
+      outline: none; 
+      -webkit-transition: all .3s ease 0s;
+      -moz-transition: all .3s ease 0s;
+      -o-transition: all .3s ease 0s;
+      transition: all .3s ease 0s;
+    }
+    .btn-lime  {
+      background: #CDDC39;
+      float: right;
+    }
+
+
+    /* Coming Soon */
+
+    .coming span {
+      -webkit-animation-name: blink;
+              animation-name: blink;
+      -webkit-animation-duration: 1.4s;
+              animation-duration: 1.4s;
+      -webkit-animation-iteration-count: infinite;
+              animation-iteration-count: infinite;
+      -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+    }
+
+    .coming span:nth-child(2) {
+      -webkit-animation-delay: .2s;
+              animation-delay: .2s;
+    }
+
+    .coming span:nth-child(3) {
+      -webkit-animation-delay: .4s;
+              animation-delay: .4s;
+    }
+
+    @-webkit-keyframes blink {
+      0% {
+        opacity: .2;
+      }
+      20% {
+        opacity: 1;
+      }
+      100% {
+        opacity: .2;
+      }
+    }
+
+    @keyframes blink {
+      0% {
+        opacity: .2;
+      }
+      20% {
+        opacity: 1;
+      }
+      100% {
+        opacity: .2;
+      }
+    }
+    /* End Coming Soon */
+
+
+    #location {
+      margin-top: 20px;
+    }
+    #price {
+      margin-bottom: 20px;
+    }
+    /* .modal-fullscreen size: we use Bootstrap media query breakpoints */
+
+    .modal-fullscreen .modal-dialog {
+      margin: 0;
+      margin-right: auto;
+      margin-left: auto;
+      width: 100%;
+    }
+    @media (min-width: 768px) {
+      .modal-fullscreen .modal-dialog {
+        width: 750px;
+      }
+    }
+    @media (min-width: 992px) {
+      .modal-fullscreen .modal-dialog {
+        width: 970px;
+      }
+    }
+    @media (min-width: 1200px) {
+      .modal-fullscreen .modal-dialog {
+         width: 1170px;
+      }
+    }
+
+    /*  About */
+    .about{ 
+      height: 400px;
+    }
+    /* PieCharts */
+    #circleBar-web-text,
+    #circleBar-mobile-text{
+        font-family: 'FranklinGothic-Book' "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+        font-size:16px;
+        fill:#000;
+    }
+    #circleBar-web-labels tspan,
+    #circleBar-mobile-labels tspan {
+        font-family: 'FranklinGothic-Book' "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+        font-size:10px;
+        fill:#6D6E71;
+    }
+
+    #circleBar-web-values tspan,
+    #circleBar-mobile-values tspan {
+        font-family: 'FranklinGothic-Book' "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+        font-size: 9px;
+        font-weight:bold;
+        fill:#000;
+    }
+    #circleBar-web-values tspan {
+        fill: #7D3A4D;
+    }
+    #circleBar-mobile-values tspan {
+        fill: #684E88;
+    }
+    /* End PieCharts */
+
+    /*  End About */
+
+    /*  Listings */
+
+    .listings{ 
+      height: 600px;
+      background-color: #eee;
+    }
+    .inner-table{
+      width: 100%;
+    }
+    .item-title {
+      color: #000000;
+      font-family: ;
+      text-decoration: none;
+      font-size: 16px;
+      position: relative;
+      text-decoration: none;
+    }
+    .item-title, .item-title{
+      color: #00BCD4;
+    }
+    .inner-table .glyphicon{
+      top: 4px;
+      right: 4px;
+    }
+    #listings-table td {
+      vertical-align: middle;
+      width: 20%;
+    }
+    .price-box{
+      text-align: center;
+    }
+    #listings-table td p {
+      margin: 0;
+    }   
+   .type {
+      color: #838383;
+      font-size: 14px;
+      position: relative;
+    }
+    .value {
+      color: #3F3F3F;
+      font-size: 14px;
+      font-weight: bold;
+    }
+    .price-value{
+      color: #CDDC39;
+      font-size: 30px;
+      padding-top: 5px;
+      vertical-align: bottom;
+    }
+    /*  End Listings */
+
+    /*  Blog */
+    .blog{ 
+      height: 500px;
+    }
+
+    /*  End Blog */
+
+
+
+
+    /* Gradient */
+    .gradient{ 
+      background-image: url(img/gradient-bg.png);
+      background-repeat: repeat-y;
+      background-size: contain;
+      background-position: center center; 
+      background: -webkit-gradient(linear, left top, right top, from(#CDDC39), to(#00BCD4));
+      background: -webkit-linear-gradient(left, #CDDC39, #00BCD4);
+      background: -moz-linear-gradient(left, #CDDC39, #00BCD4);
+      background: -ms-linear-gradient(left, #CDDC39, #00BCD4);
+      background: -o-linear-gradient(left, #CDDC39, #00BCD4);
+    }
+    .map-overlay{
+      background-image: url(img/map.png);
+      background-position: center center;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    /* End Gradient  */ 
+
+    /* Form */
+    .about-title, .listings-title, .contact-title {
+      font-family: 'Raleway', sans-serif;
+      text-align: center;
+      margin-top: 40px;
+    }
+    .about-title, .listings-title {
+      color:#363942;
+      margin-bottom:40px;
+    }
+    .contact-title {
+      color: rgba(255,255,255, 0.8);
+    }
+    .form-container {
+      background: rgba(0, 0, 0, 0.5);
+      height: 300px;
+      margin: 30px 0 70px;
+      border-radius: 2px;
+    }
+    .form-container .form-row {
+      margin-right: 0px; 
+      margin-left: 0px;
+    }
+    .form-container .form-row:first-child{
+      margin-top: 40px;
+    }
+    .form-container textarea {
+      resize: none;
+    }
+    .form-container input, .form-container textarea {
+      background: transparent;
+      color: rgba(255,255,255, 0.8);
+    }
+    .has-float-label label, .has-float-label>span {
+      color: rgba(205,220,57, 0.7);
+    }
+    .has-float-label input:placeholder-shown:not(:focus)+*, .has-float-label select:placeholder-shown:not(:focus)+*, .has-float-label textarea:placeholder-shown:not(:focus)+* {
+      color:rgba(255,255,255,.7);
+    }
+    .has-float-label input, .has-float-label select, .has-float-label textarea {
+      border-bottom: 1px solid rgba(255,255,255,.4);
+    }
+    .has-float-label input:focus, .has-float-label select:focus, .has-float-label textarea:focus {
+      -webkit-box-shadow: none,
+      -moz-box-shadow: none;
+      -ms-box-shadow: none;
+      box-shadow: none;
+      border-bottom: 1px solid rgba(14,97,97,.8);
+    } 
+
+    /* Radio Buttons */
+    .radio-row {
+      text-align: center;
+      margin-top: 10px;
+    }
+    .label--radio {
+      color: rgba(255,255,255, 0.8);
+    }
+    .radio {
+      position: relative;
+      margin: 0 1rem 0 0;
+      cursor: pointer;
+    }
+    .radio:before {
+      -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75);
+      -moz-transition: -moz-transform 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75);
+      transition: transform 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75);
+      -webkit-transform: scale(0, 0);
+      -moz-transform: scale(0, 0);
+      -ms-transform: scale(0, 0);
+      -o-transform: scale(0, 0);
+      transform: scale(0, 0);
+      content: "";
+      position: absolute;
+      top: 2.25px;
+      left: 0.25rem;
+      z-index: 1;
+      width: 0.75rem;
+      height: 0.75rem;
+      background: #025F69;
+      border-radius: 50%;
+    }
+    .radio:checked:before {
+      -webkit-transform: scale(1, 1);
+      -moz-transform: scale(1, 1);
+      -ms-transform: scale(1, 1);
+      -o-transform: scale(1, 1);
+      transform: scale(1, 1);
+    }
+    .radio:after {
+      content: "";
+      position: absolute;
+      width: 1.2rem;
+      height: 1.2rem;
+      background: #f2f2f2;
+      border: 2px solid #f2f2f2;
+      border-radius: 50%;
+    }
+    /* End Radio Buttons */
+
+    input,
+    input:active {
+      background-position: 0 24px;
+    }
+    input:checked {
+      background-position: 0 0;
+    }
+    input:checked ~ input,
+    input:checked ~ input:active {
+      background-position: 0 -24px;
+    }
+
+    
+    .btn-contact {
+      height: 300px;
+      background-color: #CDDC39;
+      color: #fff;
+      -webkit-border-radius: 0 2px 2px 0;
+      -moz-border-radius: 0 2px 2px 0;
+      -ms-border-radius: 0 2px 2px 0;
+      border-radius: 0 2px 2px 0;
+      border: none;
+      padding: 15px 28px;
+      font-weight: 600;
+      font-size: 14px;
+      outline: none; 
+      float:right;
+      -webkit-transition: all .3s ease 0s;
+      -moz-transition: all .3s ease 0s;
+      -o-transition: all .3s ease 0s;
+      transition: all .3s ease 0s;
+    }
+    .btn-contact:hover {
+      color: #fff;
+    }
+
+    /* END Form */
+
+    /*Footer*/
+    
+    footer {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        background: #303036;
+        color: rgba(255,255,255,.7);
+        text-align: center;
+    } 
+    footer .copyright {
+      font-size: 10px;
+      margin-top: 10px;
+    }
+    
+    .widget .links-list {
+      list-style: none;
+      padding-left: 0;
+    }
+    .widget .links-list li {
+      padding-bottom: 7px;
+    }
+    footer a {
+      color: #6b6d6f;
+    }
+    footer a:hover {
+      color: #fff;
+    }
+    footer a:focus, a:hover {
+      color: #97999c;
+      text-decoration: none;
+      -webkit-transition: all .3s ease 0s;
+      -moz-transition: all .3s ease 0s;
+      -o-transition: all .3s ease 0s;
+      transition: all .3s ease 0s;
+      cursor: pointer;
+    } 
+     /* END footer */ 
+  </style>
+  <body>
+
+
+
+  <!--Main-->
+    <div class="container-fluid" id="main">
+    <!-- Top Bar -->
+        <div class="row" id="top-bar">
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 search-bar">
+            <ul>
+              <li>
+                <a href="#" class="trigger-overlay trigger-menu"><span class="glyphicon glyphicon-menu-hamburger"></span><span>MENU</span></a>
+              </li>
+              <li>
+                <a href="#" class="trigger-overlay trigger-search" data-toggle="modal" data-target="#modal-fullscreen"><span class="glyphicon glyphicon-search"></span><span>SEARCH</span></a>
+                  <!-- Modal fullscreen -->
+                  <!--<div class="modal modal-fullscreen fade" id="modal-fullscreen" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                          <h4 class="modal-title" id="myModalLabel">Searching Business</h4>
+                        </div>
+                        <div class="modal-body">
+                          <form class="form-horizontal">
+                            <div class="form-group">
+                              <label class="sr-only" for="searchbusiness">Search business</label>
+                              <input type="text" class="form-control" id="searchbusiness" placeholder="TYPE INDUSTRY HERE">
+                            </div>
+                            <div class="form-group">
+                              <label class="sr-only" for="location" class="col-sm-2 control-label">Location</label>
+                              <div class="col-sm-10">
+                                <input type="text" class="form-control search-box" id="location" placeholder="Location">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label class="sr-only" for="price" class="col-sm-2 control-label">Price</label>
+                              <div class="col-sm-10">
+                                <input type="text" class="form-control search-box" id="price" placeholder="Price">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <div class="col-sm-2 col-sm-10">
+                                <button type="button" class="btn btn-default btn-cyan">Search</button>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>  -->
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 logo">
+            <div class="row">
+              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 logo-left"></div>
+              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 logo-right"></div>          
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 registration">
+            <ul>
+                  <li>
+                    <a href="#" class="trigger-overlay trigger-login"><span>LOG IN</span></a>
+                  </li>
+                  <li>
+                    <a href="#" class="trigger-overlay trigger-signup"><span>SIGN UP</span></a>
+                  </li>
+                </ul>
+
+          </div>
+        </div>
+  <!-- #END# Top Bar -->
+  <!-- Main -->
+      <div class="row">
+
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 first-half">
+          <div class="content-left">
+            <h1>Need a quality deal?</br>Tell us your criterias</h1>
+            <a href="#" class="btn btn-default btn-lime coming" type="submit">Coming Soon <span>.</span><span>.</span><span>.</span></a>
+          </div>
+        </div>
+          
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 second-half">
+          <div class="content-right">
+            <h1>The best way</br>to sell your start-up</h1>
+            <input class="btn btn-default btn-cyan" type="submit" value="Register">
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- #END# Main -->
+
+  <!-- About -->
+    <div class="container-fluid">
+      <div class="row about"> 
+        <h1 class="about-title">About</h1>
+        <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs"></div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
+          
+          
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
+          <svg version="1.1"
+             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+             x="0px" y="0px" width="724px" height="400px"
+             overflow="visible" xml:space="preserve">
+              
+              <g id="circleBarCharts">
+                  
+                  <!-- Web Circle Bar Chart -->
+                  <g id="circleBar-web-group" transform="translate(0,0)">
+                      <text id="circleBar-web-text" opacity="0" x="200" y="143">WEB</text>
+                      <g id="circleBar-web-chart" transform="translate(215,150)"></g>
+                      <clippath id="circleBar-web-clipPath">
+                          <rect id="circleBar-web-clipLabels" x="205" y="215" width="180" height="0"></rect>
+                      </clippath>
+                      <g id="circleBar-web-legend" clip-path="url(#circleBar-web-clipPath)">
+                          <text id="circleBar-web-values" transform="translate(222,225)"></text>
+                          <text id="circleBar-web-labels" transform="translate(277,225)"></text>
+                      </g>
+                  </g>
+                  <!-- END: Web Circle Bar Chart -->
+              
+                  <!-- Mobile Circle Bar Chart -->
+                  <g id="circleBar-mobile-group" transform="translate(362,0)">
+                      <text id="circleBar-mobile-text" opacity="0" x="187" y="155">MOBILE</text>
+                      <g id="circleBar-mobile-chart" transform="translate(215,150)"></g>
+                      <clippath id="circleBar-mobile-clipPath">
+                          <rect id="circleBar-mobile-clipLabels" x="205" y="215" width="150" height="0"></rect>
+                      </clippath>
+                      <g id="circleBar-mobile-legend" clip-path="url(#circleBar-mobile-clipPath)">
+                          <text id="circleBar-mobile-values" transform="translate(222,225)"></text>
+                          <text id="circleBar-mobile-labels" transform="translate(277,225)"></text>
+                      </g>
+                  </g>
+                  <!-- END: Mobile Circle Bar Chart -->
+              </g>
+             
+          </svg>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs"></div>
+      </div> 
+    </div>
+  <!-- #END# About -->
+
+  <!-- New Listings -->
+    <div class="container-fluid">
+      <div class="row listings">
+        <h1 class="listings-title">Latest Linstings</h1> 
+        <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs"></div>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+          <table class="table table-hover" id="listings-table"> 
+            <tbody>
+              <tr>
+                <td>
+                  <a href="#" class="item-title">AI project management</a>
+                  <table class="inner-table">
+                    <tbody>
+                      <tr>
+                        <td>
+                          <p><span class="type">Established: 2009</span></p>
+                        </td>
+                        <td>
+                          <p><span class="glyphicon glyphicon-tags type" aria-hidden="true"></span>
+                            <span class="label label-info">AI</span>
+                            <span class="label label-info">IoT</span>
+                            <span class="label label-info">PM</span>
+                          </p>
+                        </td>
+                        <td>
+                          <p><span class="type">Anual Revenue: </span><span class="value">&#36;742,444</span></p>
+                          <p><span class="type">Annual Expenses: </span><span class="value">&#36;535,000</span></p>
+                          <p><span class="type">Annual Profit: </span><span class="value">&#36;526,039</span></p>
+                        </td>
+                        <td>
+                          <p><span class="type">Monthly Uniques: </span><span class="value">186K</span></p>
+                          <p><span class="type">Employees: </span><span class="value">20</span></p>
+                        </td>
+                        <td class="price-box">
+                          <p><span class="type">Asking Price: </span></p>
+                          <p><span class="price-value">&#36;1.3M</span></p>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>  
+                </td>
+              </tr>   
+              <tr>
+                <td>
+                  <a href="#" class="item-title">Personalized Ad</a>
+                  <table class="inner-table">
+                    <tbody>
+                      <tr>
+                        <td>
+                          <p><span class="type">Established: 2010</span></p>
+                        </td>
+                        <td>
+                          <p><span class="glyphicon glyphicon-tags type" aria-hidden="true"></span>
+                            <span class="label label-info">AI</span>
+                            <span class="label label-info">IoT</span>
+                            <span class="label label-info">PM</span>
+                          </p>
+                        </td>
+                        <td>
+                          <p><span class="type">Anual Revenue: </span><span class="value">&#36;950,000</span></p>
+                          <p><span class="type">Annual Expenses: </span><span class="value">&#36;150,000</span></p>
+                          <p><span class="type">Annual Profit: </span><span class="value">&#36;850,000</span></p>
+                        </td>
+                        <td>
+                          <p><span class="type">Monthly Uniques: </span><span class="value">18M</span></p>
+                          <p><span class="type">Employees: </span><span class="value">15</span></p>
+                        </td>
+                        <td class="price-box">
+                          <p><span class="type">Asking Price: </span></p>
+                          <p><span class="price-value">&#36;2.7M</span></p>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>  
+                </td>
+              </tr> 
+              <tr>
+                <td>
+                  <a href="#" class="item-title">Sport Bidding Platform</a>
+                  <table class="inner-table">
+                    <tbody>
+                      <tr>
+                        <td>
+                          <p><span class="type">Established: 2006</span></p>
+                        </td>
+                        <td>
+                          <p><span class="glyphicon glyphicon-tags type" aria-hidden="true"></span>
+                            <span class="label label-info">AI</span>
+                            <span class="label label-info">IoT</span>
+                            <span class="label label-info">PM</span>
+                          </p>
+                        </td>
+                        <td>
+                          <p><span class="type">Anual Revenue: </span><span class="value">&#36;1,600,000</span></p>
+                          <p><span class="type">Annual Expenses: </span><span class="value">&#36;600,000</span></p>
+                          <p><span class="type">Annual Profit: </span><span class="value">&#36;1,100,000</span></p>
+                        </td>
+                        <td>
+                          <p><span class="type">Monthly Uniques: </span><span class="value">10M</span></p>
+                          <p><span class="type">Employees: </span><span class="value">19</span></p>
+                        </td>
+                        <td class="price-box">
+                          <p><span class="type">Asking Price: </span></p>
+                          <p><span class="price-value">&#36;3.5M</span></p>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>  
+                </td>
+              </tr> 
+              <tr>
+                <td>
+                  <a href="#" class="item-title">ERP for Trading Firms</a>
+                  <table class="inner-table">
+                    <tbody>
+                      <tr>
+                        <td>
+                          <p><span class="type">Established: 2009</span></p>
+                        </td>
+                        <td>
+                          <p><span class="glyphicon glyphicon-tags type" aria-hidden="true"></span>
+                            <span class="label label-info">AI</span>
+                            <span class="label label-info">IoT</span>
+                            <span class="label label-info">PM</span>
+                          </p>
+                        </td>
+                        <td>
+                          <p><span class="type">Anual Revenue: </span><span class="value">&#36;228,000</span></p>
+                          <p><span class="type">Annual Expenses: </span><span class="value">&#36;236,000</span></p>
+                          <p><span class="type">Annual Profit: </span><span class="value">&#36;100,000</span></p>
+                        </td>
+                        <td>
+                          <p><span class="type">Monthly Uniques: </span><span class="value">240K</span></p>
+                          <p><span class="type">Employees: </span><span class="value">9</span></p>
+                        </td>
+                        <td class="price-box">
+                          <p><span class="type">Asking Price: </span></p>
+                          <p><span class="price-value">&#36;285K</span></p>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>  
+                </td>
+              </tr> 
+                    
+            </tbody>
+          </table>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs"></div>
+      </div> 
+    </div>
+  <!-- #END# New Listings -->
+
+  <!-- Blog -->
+    <div class="container-fluid">
+      <div class="row blog">
+        <h1 class="listings-title">New in Blog</h1> 
+        <div class="col-lg-3 col-md-3 col-sm-2 col-xs-2"></div>
+        <div class="col-lg-6 col-md-6 col-sm-8 col-xs-8">
+           
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-2 col-xs-2"></div>
+      </div> 
+    </div>
+  <!-- #END# Blog -->
+
+
+
+  <!-- Gradient -->
+    <div class="container-fluid gradient">
+      <div class="row map-overlay">
+         <!-- Contact -->
+        <div class="col-lg-3 col-md-3 col-sm-2 hidden-xs"></div>
+        <div class="col-lg-6 col-md-6 col-sm-8 col-xs-12">
+          <!-- Form-->
+          <h1 class="contact-title">Get in Contact</h1>
+          <form class="form">
+            <div class="form-container">
+              <div class="row">
+                <div class="col-lg-10 col-md-10 col-sm-8 col-xs-12">
+                  <div class="row form-row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                      <div class="form-group">
+                        <div class="has-float-label">
+                          <input id="name" type="text" class="form-control" placeholder="John Doe">
+                          <label for="name">Name</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                      <div class="form-group">
+                        <div class="has-float-label">
+                          <input id="email" type="email" class="form-control" placeholder="email@example.com"/>
+                          <label for="email">Email</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row form-row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <div class="form-group">
+                        <div class="row radio-row">
+                          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                            <label class="radio-inline label--radio">
+                              <input class="radio" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked> I am a Buyer
+                            </label> 
+                          </div>
+                          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                            <label class="radio-inline label--radio">
+                              <input class="radio" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> I am a Seller
+                            </label> 
+                          </div>
+                          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                            <label class="radio-inline label--radio">
+                              <input class="radio" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> Other
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row form-row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <div class="form-group">
+                        <div class="has-float-label">
+                          <textarea class="form-control" rows="4" placeholder="Leave your message here..."></textarea>
+                          <label for="subject">Message</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
+                  <button type="submit" class="btn btn-default btn-contact"><img src="img/plane.png"></br><span>Send</span></button>
+                </div>
+              </div>
+            </div>
+          </form>
+
+          <!-- END Form-->
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-2 hidden-xs"></div>
+      
+  <!-- #END# Contact -->
+
+      </div>
+    </div>
+  <!-- #END# Gradient -->
+
+  
+
+  <!-- Footer -->
+        <footer>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-lg-3 col-md-3 col-sm-3 hidden-xs"></div>
+
+              <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 widget">
+                <ul class="links-list">
+                  <li><a href="index.html">About</a></li>
+                  <li><a href="shortcodes.html">Blog</a></li>
+                </ul>
+              </div>
+              <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 widget">
+                <ul class="links-list">
+                  <li><a href="services.html">FAQs</a></li>
+                  <li><a href="services.html">NDA</a></li>
+                </ul>
+              </div> 
+              <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 widget">
+                <ul class="links-list">
+                  <li><a href="about-us.html">Privacy Policy</a></li>
+                  <li><a href="https://help.market.envato.com/hc/en-us">Financial Disclaimer</a></li>
+                </ul>
+              </div>
+
+              <div class="col-lg-3 col-md-3 col-sm-3 hidden-xs"></div>
+            </div> 
+            <!-- SUB FOOTER -->
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 copyright">
+                  <div style="text-align:center">&copy; 2017</div>
+                </div>
+                              <!-- Social Links 
+                <div class="footer2-soc-a right">
+                  <a href="http://themeforest.net/user/abcgomel/portfolio?ref=abcgomel" title="Twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+                  <a href="https://www.behance.net/abcgomel" title="Behance" target="_blank"><i class="fa fa-behance"></i></a>
+                  <a href="http://themeforest.net/user/abcgomel/portfolio?ref=abcgomel" title="LinkedIn+" target="_blank"><i class="fa fa-linkedin"></i></a>
+                  <a href="http://themeforest.net/user/abcgomel/portfolio?ref=abcgomel" title="Dribbble" target="_blank"><i class="fa fa-dribbble"></i></a>
+                </div>-->
+                
+                <!-- Copyright -->
+
+            </div>  
+          </div>
+            
+        </footer>
+    <!-- #END# Footer -->
+
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script> 
+    <script>
+      var main = document.querySelector("#main");
+         
+      function setTranslate(xPos, yPos, el) {
+          el.style.transform = "translate3d(" + xPos + ", " + yPos + "px, 0)";
+      }
+   
+      window.addEventListener("DOMContentLoaded", scrollLoop, false);
+   
+      var xScrollPosition;
+      var yScrollPosition;
+   
+      function scrollLoop() {
+          xScrollPosition = window.scrollX;
+          yScrollPosition = window.scrollY;
+   
+          setTranslate(0, yScrollPosition * -0.2, main);
+   
+          requestAnimationFrame(scrollLoop);
+      }
+    </script>
+
+    <!--  PieCharts script -->
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/d3/3.2.2/d3.v3.min.js'></script>
+    <script src="js/piecharts.js"></script>
+  </body>
+</html>
