@@ -21,10 +21,11 @@
 $db = new Database;
 
 // Run Query
-$db->query("SELECT * FROM 'sellers'");
+$db->query("SELECT * FROM sellers, buyers");
 
 // Assign Result Set
 $sellers = $db->resultset();
+$buyers = $db->resultset();
 ?>
 <body style="background-color:rgba(0,0,0,0.1);">
 <div class="row">
@@ -33,7 +34,7 @@ $sellers = $db->resultset();
         <h1 style="margin-top:50px;font-weight:bold;">Admin Area</h1>
         <h2>Sellers</h2>
         <table class="table table-hover" style="margin:50px auto;">
-            <thead>
+            <thead  style="background-color:rgba(255,255,255,0.8);">
                 <tr>
                     <th>Name</th>
                     <th>Email</th>
@@ -48,12 +49,12 @@ $sellers = $db->resultset();
                 <?php foreach($sellers as $seller) : ?>
                 <tr>
                     <td><?php echo $seller->seller_name; ?></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td><?php echo $seller->seller_email; ?></td>
+                    <td><?php echo $seller->seller_location; ?></td>
+                    <td><?php echo $seller->seller_industry; ?></td>
+                    <td><?php echo $seller->seller_mrr; ?></td>
+                    <td><?php echo $seller->employees; ?></td>
+                    <td><?php echo $seller->date_added; ?></td>
                 </tr>
                 <?php endforeach; ?>
             </tbody>
@@ -68,17 +69,17 @@ $sellers = $db->resultset();
         <table class="table table-hover" style="margin:50px auto;">
             <thead>
                 <tr>
-                    <th>Name</th>
                     <th>Email</th>
                     <th>Date Added</th>
                 </tr>
             </thead>
             <tbody>
+            <?php foreach($buyers as $buyer) : ?>
                 <tr>
-                    <td>...</td>
-                    <td>...</td>
-                    <td>...</td>
+                    <td><?php echo $buyer->buyer_email; ?></td>
+                    <td><?php echo $buyer->create_date; ?></td>
                 </tr>
+            <?php endforeach; ?>
             </tbody>
         </table>
     </div>

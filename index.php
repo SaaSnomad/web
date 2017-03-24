@@ -19,47 +19,47 @@
     <div class="col-md-2"></div>
     <div class="col-md-3">
         <h1 style="margin-top:50px;font-weight:bold;">Buy SaaS</h1>
-        <form style="margin:0 auto;">
+        <form id="addBuyer" action="add_buyer.php" method="post" style="margin:0 auto;">
             <div class="form-group">
                 <label for="buyer_email">Email</label>
-                <input type="email" class="form-control" id="buyer_email" placeholder="buyer@example.com">
+                <input name="buyer_email" type="email" class="form-control" id="buyer_email" placeholder="buyer@example.com">
             </div>
-            <button type="submit" class="btn btn-success">Send</button>
+            <button name="subscribe" type="submit" class="btn btn-success">Subscribe</button>
         </form>
     </div>
     <div class="col-md-1"></div>
     <div class="col-md-4">
         <h1 style="margin-top:50px;font-weight:bold;">Sell SaaS</h1>
-        <form style="margin:0 auto;">
+        <form id="addOffer" action="add_seller.php" method="post" style="margin:0 auto;">
             <div class="form-group">
                 <label for="seller_name">Name</label>
-                <input type="text" class="form-control" id="seller_name" placeholder="Jane Doe">
+                <input name="seller_name" type="text" class="form-control" id="seller_name" placeholder="Jane Doe">
             </div>
             <div class="form-group">
                 <label for="seller_email">Email</label>
-                <input type="email" class="form-control" id="seller_email" placeholder="seller@example.com">
+                <input name="seller_email" type="email" class="form-control" id="seller_email" placeholder="seller@example.com">
             </div>
             <div class="form-group">
                 <label for="seller_location">Location</label>
-                <input type="text" class="form-control" id="seller_location" placeholder="United States">
+                <input name="seller_location" type="text" class="form-control" id="seller_location" placeholder="United States">
             </div>
             <div class="form-group">
                 <label for="seller_industry">Industry</label>
-                <input type="text" class="form-control" id="seller_industry" placeholder="Artificial Intelligence">
+                <input name="seller_industry" type="text" class="form-control" id="seller_industry" placeholder="Artificial Intelligence">
             </div>
             <div class="form-group">
                 <label for="seller_mrr">Revenue</label>
-                <input type="text" class="form-control" id="seller_mrr" placeholder="MRR">
+                <input name="seller_mrr" type="text" class="form-control" id="seller_mrr" placeholder="MRR">
             </div>
             <div class="form-group">
-                <label for="employees">Revenue</label>
-                <input type="text" class="form-control" id="employees" placeholder="Number of employees">
+                <label for="employees">Employees</label>
+                <input name="employees" type="text" class="form-control" id="employees" placeholder="Number of employees">
             </div>
             <div class="form-group">
                 <label for="asking_price">Asking Price</label>
-                <input type="text" class="form-control" id="asking_price" placeholder="Price">
+                <input name="asking_price" type="text" class="form-control" id="asking_price" placeholder="Price">
             </div>
-            <button type="submit" class="btn btn-success">Send</button>
+            <button name="sendOffer" type="submit" class="btn btn-success">Send</button>
         </form>
     </div>
     <div class="col-md-2"></div>
@@ -69,5 +69,6 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
 </body>
 </html>
