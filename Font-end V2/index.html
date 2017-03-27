@@ -130,6 +130,8 @@
         	border-bottom: 1px solid rgba(0,0,0,.1);
         	padding: 5px;
         	font-weight:100;
+        	width:70%;
+        	text-align: center;
         }
         #seller-sector input:focus, #seller-sector select:focus, #seller-sector textarea:focus,
         #investor-sector input:focus, #investor-sector select:focus, #investor-sector textarea:focus {
@@ -153,7 +155,6 @@
         /*buttons*/
         #investor-sector .action-button, #seller-sector .action-button {
         font-size: 24px;
-        width: 100px;
         background: transparent;
         color: white;
         border: 0 none;
@@ -240,10 +241,10 @@
   font-weight: 100;
 }
 .btn-1 svg {
-  height: 47px;
+  height: 60px;
   left: 0;
   position: absolute;
-  top: 0;
+  top: -7px;
   width: 100%;
 }
 .btn-1 rect {
@@ -292,6 +293,7 @@
 .modal-fullscreen .close {
 	font-size: 65px;
     font-weight: 100;
+    line-height: 0;
 }
 .modal-fullscreen .modal-content {
   background: transparent;
@@ -359,7 +361,7 @@ body {
         <nav class="navbar navbar-custom" role="navigation">
                               <div class="container">
                                     <div class="row">
-                                          <div class="col-md-4 col-xs-4">
+                                          <div class="col-md-4">
                                                    <div class="site-logo">
                                                             <a href="index.html" class="brand">SaaS Nomad</a>
                                                     </div>
@@ -380,14 +382,14 @@ body {
                                                                   <li class="active"><a href="#offers">Recent Offers</a></li>
 																  <li><a href="#about">How It Works</a></li>
                                                                   <li><a href="#news">Knowledge Base</a></li>
-                                                                  <li><a href="" style="color:#3dc9b3" data-toggle="modal" data-target="#modal-fullscreen">Become Our Partner</a></li>
+                                                                  <li><a href="" style="color:#3dc9b3;" data-toggle="modal" data-target="#modal-fullscreen">Become Our Partner</a></li>
                                                             </ul>
                                                             <!-- Modal fullscreen -->
 															<div class="modal modal-fullscreen fade" id="modal-fullscreen" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 															  <div class="modal-dialog">
 															    <div class="modal-content">
 															        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-															        <h4 class="modal-title" id="myModalLabel" style="margin: 35px;color:rgba(0,0,0,0.8);">Become our partner</h4>
+															        <h4 class="modal-title" id="myModalLabel" style="margin: 35px;color:rgba(0,0,0,0.8);    margin: 130px 35px 10px;">Become our partner</h4>
 															        
 													              	<div class="row">
 													              	<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>
@@ -411,7 +413,7 @@ body {
 													                    <input id="investor-email" type="email" name="investor-email" class="white-opacity" placeholder="Your Email"/>
 													                    <label class="sr-only" for="investor-email">Your Email</label>
 													                </div> 
-													                <input type="submit" name="submit1" class="submit btn-cyan buttons btn-1" value="Subscribe" style="width: 50%;background-color:#CDDC39;line-height: 52px;padding:0;color:white;border:none; box-shadow:none;"/>
+													                <input type="submit" name="submit1" class="btn btn-skin btn-scroll" value="Subscribe" style="color:#fff;"/>
 															        </form>
 		              												</div>
 		              												<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>
@@ -453,7 +455,7 @@ body {
 				        <h1 class="counter" style="display: inline-block; width: 32%;margin-bottom:20px;">1,147</h1>
 				      </div>
 				      <p class="fs-subtitle">Companies in our Database</p>
-		              <a style="width:200px;position:relative;height: 58px;top:50px;" type="button" name="next" class="next action-button buttons btn-1" value="Get Valuation Estimate" /><svg>
+		              <a style="width:200px;position:relative;height: 58px;top:50px;text-transform:uppercase;" type="button" name="next" class="next action-button buttons btn-1" value="Get Valuation Estimate" /><svg>
 					        <rect x="0" y="0" fill="none" width="100%" height="100%"/>
 					      </svg>
 					     Get Valuation Estimate</a>
@@ -492,7 +494,7 @@ body {
 		              		<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"></div>
 		              		<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 				              <div class="form-group">
-				                    <select id="industry" class="form-control" name="industry" class="white-opacity" placeholder="Industry" style="padding: 3px;color:#111;display: inline-block;width: 90%;margin-right: 5px; margin-top: 11px;"/>
+				                    <select id="industry" class="form-control" name="industry" class="white-opacity" placeholder="Industry" style="padding: 3px;color:#111;display: inline-block;width: 179px; margin-left: 43px; margin-top: 11px;"/>
 				                      <option value='10' data-othervalue='20'>Industry1</option>
 									  <option value='20' data-othervalue='30'>Industry2</option>
 									  <option value='30' data-othervalue='40'>Industry3</option>
@@ -505,7 +507,7 @@ body {
 				        	</div>
 				        	<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 				                <div class="form-group">
-				                    <input id="mrr" type="text" name="mrr" class="white-opacity" placeholder="MRR"/>
+				                    <input id="mrr" type="text" name="mrr" class="white-opacity" placeholder="MRR" style="width: 190px;margin-left: 28px;"/>
 				                    <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-placement="top" title="Tooltip on top"></span>
 				                    <label class="sr-only" for="mrr">MRR</label>
 				                </div>
@@ -531,18 +533,8 @@ body {
 		                </div>
 		                
 		                 
-		              <!--<input type="button" name="previous" class="previous action-button" value="Go Back" />
-		              <input type="button" name="next" class="next action-button" value="Place Offer" />-->
-
-		              <a style="width:200px;position:relative;height: 58px;top:50px;" type="button" name="previous" class="previous action-button buttons btn-1" value="Go Back" /><svg>
-					        <rect x="0" y="0" fill="none" width="100%" height="100%"/>
-					      </svg>
-					     Go Back</a>
-					  <a style="width:200px;position:relative;height: 58px;top:50px;" type="button" name="next" class="next action-button buttons btn-1" value="Place Offer" /><svg>
-					        <rect x="0" y="0" fill="none" width="100%" height="100%"/>
-					      </svg>
-					     Place Offer</a>
-
+		              <input type="button" name="previous" class="previous action-button" value="Go Back"  style="border: 1px solid;font-size: 16px;font-weight: 400;line-height: 48px;margin: 2em;width: 160px;text-transform:uppercase;"/>
+		              <input type="button" name="next" class="next action-button" value="Place Offer" style="border: 1px solid;font-size: 16px;font-weight: 400;line-height: 48px;margin: 2em;width: 160px;text-transform:uppercase;"/>
 
 
 		            </fieldset>
@@ -583,7 +575,9 @@ body {
 		                </div>
 		                
 		              <!--<input type="button" name="previous" class="previous action-button " value="Go Back" />-->
-		              <input type="submit" name="submit2" class="submit action-button btn-cyan buttons btn-1" value="Send For Review" style="background-color:#CDDC39;line-height: 52px;"/>
+
+		              <input type="button" name="previous" class="previous action-button" value="Go Back"  style="border: 1px solid;font-size: 16px;font-weight: 400;line-height: 48px;margin: 2em;max-width: 160px;text-transform:uppercase;"/>
+		              <input type="submit" name="submit2" class="submit action-button" value="SEND FOR REVIEW" style="border: 1px solid;font-size: 16px;font-weight: 400;line-height: 48px;margin: 2em;max-width: 160px;"/>
 
 		            </fieldset>
 		          </form>
@@ -608,8 +602,9 @@ body {
 		}
 		.application textarea {
 		    width: 68%;
-		    margin-left: 6%;
-		    margin-right: 6%;
+		    margin-left: 16%;
+		    margin-right: 16%;
+		    display: block;
 		}
 
 	</style>
@@ -636,6 +631,9 @@ body {
 			.table>tbody>tr>td {
 				vertical-align:middle;
 				text-align: initial;
+			}
+			.table>tbody>tr>td:last-child{
+				text-align:center;
 			}
 			.table>tbody>tr>td p{
 				margin:0;
@@ -692,7 +690,7 @@ body {
 		                    </p>
 		                </td>
 		                <td>&#36;742,444</td>
-		                <td>18</td>
+		                <td>29</td>
 		               </tr>
 		               <tr>
 		                <td>
@@ -708,7 +706,7 @@ body {
 		                    </p>
 		                </td>
 		                <td>&#36;742,444</td>
-		                <td>18</td>
+		                <td>10</td>
 		               </tr>
 		               <tr>
 		                <td>
@@ -724,7 +722,7 @@ body {
 		                    </p>
 		                </td>
 		                <td>&#36;742,444</td>
-		                <td>18</td>
+		                <td>25</td>
 		               </tr>
 		               <tr>
 		                <td>
@@ -740,7 +738,7 @@ body {
 		                    </p>
 		                </td>
 		                <td>&#36;742,444</td>
-		                <td>18</td>
+		                <td>50</td>
 		               </tr>
 		            </tbody>
 		          </table>
@@ -753,13 +751,13 @@ body {
 	<!-- /Section: Recent offers -->
 
 	<!-- Section: How it works -->
-    <section id="about" class="home-section color-dark bg-white">
+    <section id="about" class="home-section color-dark bg-white" style="background-color:#f9f9f9;">
 		<div class="container marginbot-50">
 			<div class="row">
 				<div class="col-lg-8 col-lg-offset-2">
 					<div class="animatedParent">
 					<div class="section-heading text-center animated">
-					<h2 class="h-bold">How it works три картинки</h2>
+					<h2 class="h-bold">How it works</h2>
 					<div class="divider-header"></div>
 					</div>
 					</div>
@@ -795,13 +793,13 @@ body {
 	
 	
 	<!-- Section: Knowledge base -->
-    <section id="news" class="home-section color-dark bg-gray">
+    <section id="news" class="home-section color-dark bg-gray" style="background-color:#fff;">
 		<div class="container marginbot-50">
 			<div class="row">
 				<div class="col-lg-8 col-lg-offset-2">
 					<div>
 					<div class="section-heading text-center">
-					<h2 class="h-bold">News</h2>
+					<h2 class="h-bold">Knowledge Base</h2>
 					<div class="divider-header"></div>
 					</div>
 					</div>
@@ -1018,9 +1016,9 @@ $(function () {
 
 								$('#mrr').on('keyup',(function(){
 							        var range_from=parseInt(firstValue*($(this).val()*12));
-							        	$("#range-from").val(range_from);
+							        	$("#range-from").val('$ ' + range_from);
 									var range_to=parseInt(secondValue*($(this).val()*12));
-							        	$("#range-to").val(range_to);
+							        	$("#range-to").val('$ ' + range_to);
 							    	}));
 							});
 
@@ -1052,6 +1050,7 @@ $(".modal-fullscreen").on('hidden.bs.modal', function () {
 });
 
 </script>
+ 
 </body>
 
 </html>
