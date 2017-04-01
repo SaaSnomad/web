@@ -46,4 +46,25 @@
             $("#range-to").val('$ ' + range_to);
         }));
     });
-      
+
+        // Modal Windows 
+
+    /* Open */
+    function openBuyerNav() {
+        document.getElementById("buyerNav").style.height = "100%";
+    }
+
+    /* Close */
+    function closeBuyerNav() {
+        document.getElementById("buyerNav").style.height = "0%";
+    }
+    /* Open */
+    function openSellerNav() {
+        document.getElementById("sellerNav").style.width = "100%";
+    }
+
+    /* Close */
+    function closeSellerNav() {
+        document.getElementById("sellerNav").style.width = "0%";
+    }
+          
