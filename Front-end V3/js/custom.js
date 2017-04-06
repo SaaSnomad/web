@@ -10,8 +10,12 @@
      
 
     //  Parallax effect          
-     new WOW().init(); 
+    new WOW().init(); 
 
+    //  Bootstrap Tooltip Initialization
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
     //  Counter   
         jQuery(document).ready(function( $ ) {
             $('.counter').counterUp({
@@ -33,7 +37,8 @@
       
  
     //  Valuation Estimate  
-     
+ 
+
     $(document).ready(function(){
         var firstValue=$('#industry').find('option:selected').attr('value');
         var secondValue=$('#industry').find('option:selected').attr('data-othervalue');
@@ -41,12 +46,12 @@
 
         $('#mrr').on('keyup',(function(){
             var range_from=parseInt(firstValue*($(this).val()*12));
-            $("#range-from").val('$ ' + range_from);
+            $("#range-from").val(range_from);
             var range_to=parseInt(secondValue*($(this).val()*12));
-            $("#range-to").val('$ ' + range_to);
+            $("#range-to").val(range_to);
         }));
-    });
 
+    }); 
         // Modal Windows 
 
     /* Open */
@@ -67,4 +72,7 @@
     function closeSellerNav() {
         document.getElementById("sellerNav").style.width = "0%";
     }
-          
+
+
+
+

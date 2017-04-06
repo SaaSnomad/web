@@ -41,7 +41,7 @@
         outline: 0;
         height: 2.1rem;
         width: 100%;
-        font-size: 1rem;
+        font-size: 0.8rem;
         box-shadow: none;
         -webkit-box-sizing: content-box;
         -moz-box-sizing: content-box;
@@ -85,7 +85,7 @@
 }
 /* Section-heading__content-inner  */
 .section-heading__content-inner {
-        width: calc(74% + 90px);
+        padding: 0 2rem;
         display: -webkit-flex;
         display: -ms-flexbox;
         display: flex;
@@ -103,7 +103,6 @@
         -ms-flex-positive: 0;
         flex-grow: 0;
         display: block;
-        margin-right: 16px;
     }
     .section-heading__icon {
         -webkit-flex-grow: 1;
