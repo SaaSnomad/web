@@ -5722,8 +5722,8 @@ textarea.md-textarea {
   input[type=search-md]:focus:not([readonly]),
   input[type=search]:focus:not([readonly]),
   textarea.md-textarea:focus:not([readonly]) {
-    border-bottom: 1px solid #4285F4;
-    box-shadow: 0 1px 0 0 #4285F4; }
+    border-bottom: 0.5px solid #4285F4;
+    box-shadow: none; }
   input[type=text]:focus:not([readonly]) + label,
   input[type=password]:focus:not([readonly]) + label,
   input[type=email]:focus:not([readonly]) + label,
@@ -5760,8 +5760,7 @@ textarea.md-textarea {
   input[type=search]:focus.valid,
   textarea.md-textarea.valid,
   textarea.md-textarea:focus.valid {
-    border-bottom: 1px solid #00C851;
-    box-shadow: 0 1px 0 0 #00C851; }
+    border-bottom: 0.5px solid #00C851; }
   input[type=text].valid + label:after,
   input[type=text]:focus.valid + label:after,
   input[type=password].valid + label:after,
@@ -5812,8 +5811,7 @@ textarea.md-textarea {
   input[type=search]:focus.invalid,
   textarea.md-textarea.invalid,
   textarea.md-textarea:focus.invalid {
-    border-bottom: 1px solid #F44336;
-    box-shadow: 0 1px 0 0 #F44336; }
+    border-bottom: 0.5px solid #F44336; }
   input[type=text].invalid + label:after,
   input[type=text]:focus.invalid + label:after,
   input[type=password].invalid + label:after,
