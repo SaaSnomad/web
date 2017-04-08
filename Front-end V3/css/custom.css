@@ -143,10 +143,7 @@
 
 /*basic reset*/
 * {margin: 0; padding: 0;}
- 
-body {
-    font-family: 'San Francisco', arial, verdana;
-}
+  
 /*form styles*/
 #msform {
     width: 400px;
