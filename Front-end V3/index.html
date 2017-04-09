@@ -67,27 +67,27 @@
                     <div class="row">
                                         <div class="col-lg-3 col-md-3 col-sm-2 hidden-xs"></div>
                                         <div class="col-lg-6 col-md-6 col-sm-8  col-xs-12">
-                                            <form id="buyerApplication" data-toggle="validator" role="form" style="margin: 0 auto;">
+                                            <form id="buyerApplication" action="add_buyer.php" data-toggle="validator" role="form" style="margin: 0 auto;">
                                             <!--Email validation--> 
                                             <h2 class="" style="color:white;">Buyer Application</h2>
                                             <p style="color:#1de9b6;">Subscribe for Featured Listings<p>
                                                 <div class="md-form input-group" style="width: 100%;"> 
-                                                    <input type="text" id="" class="form-control validate" placeholder="Name" aria-describedby="basic-addon2" required>
+                                                    <input name="buyer_name" type="text" id="" class="form-control validate" placeholder="Name" aria-describedby="basic-addon2" required>
                                                 </div> 
                                                 <div class="md-form input-group" style="width: 100%;"> 
-                                                    <input type="email" id="" class="form-control validate" placeholder="Email" aria-describedby="basic-addon2" required>
+                                                    <input name="buyer_email" type="email" id="" class="form-control validate" placeholder="Email" aria-describedby="basic-addon2" required>
                                                 </div>
                                                 <div class="md-form input-group" style="width: 100%;"> 
-                                                    <input type="text" id="" class="form-control validate" placeholder="Company Name" aria-describedby="basic-addon2" required>
+                                                    <input name="buyer_company" type="text" id="" class="form-control validate" placeholder="Company Name" aria-describedby="basic-addon2" required>
                                                 </div> 
                                                 <div class="md-form input-group" style="width: 100%;"> 
-                                                    <input type="text" id="" class="form-control validate" placeholder="Location" aria-describedby="basic-addon2" required>
+                                                    <input name="buyer_location" type="text" id="" class="form-control validate" placeholder="Location" aria-describedby="basic-addon2" required>
                                                 </div> 
                                                 <div class="md-form input-group" style="width: 100%;"> 
-                                                    <input type="text" id="" class="form-control validate" placeholder="Industry Focus" aria-describedby="basic-addon2" required>
+                                                    <input name="buyer_industry" type="text" id="" class="form-control validate" placeholder="Industry Focus" aria-describedby="basic-addon2" required>
                                                 </div> 
                                                 <div class="form-inline"> 
-                                                    <button type="submit" class="btn btn-primary text-uppercase">Subscribe</button>   
+                                                    <button name="subscribe" type="submit" class="btn btn-primary text-uppercase">Subscribe</button>   
                                                 </div>
                                             </form>
                                         </div>
@@ -667,7 +667,7 @@
                                     </div>
                                     <div class="col-lg-1 col-md-1 hidden-sm hidden-xs"></div>
                                     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style="padding-right: 0; padding-left: 0;">
-                                        <h4 style="margin-bottom: 15px;">You can subscribe for the latest M&A deals. Just select the Industry your SaaS covers and we will send it to your Inbox weekly.</h4>
+                                        <h4 style="margin-bottom: 15px;">You can subscribe for the latest M&A news. Just select the Industry your SaaS covers and we will send it to your Inbox weekly.</h4>
                                         <form id="subscribe" data-toggle="validator" role="form">
                                             <div class="md-form input-group" style="width: 100%;"> 
                                                 <select id="industry2" class="form-control" name="industry" placeholder="Industry" aria-describedby="basic-addon2" required>
