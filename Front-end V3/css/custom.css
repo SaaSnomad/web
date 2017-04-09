@@ -66,7 +66,7 @@
         border-radius: 2px;
     }
     
-    .card-overlay{padding: 1.5rem;border-radius: 6px;background-color:rgba(0,0,0,0.5);}
+    .card-overlay{border-radius: 6px;background-color:rgba(0,0,0,0.5);}
     .card-block{padding: 1.25rem;}
  
                                      
@@ -193,7 +193,7 @@ i, cite, em, var, address, dfn {
     margin-bottom: 10px;
 }
 .fs-subtitle {
-    font-weight: normal;
+    font-weight: 100;
     font-size: 13px;
     color: #666;
     margin-bottom: 40px;
@@ -210,7 +210,7 @@ i, cite, em, var, address, dfn {
                           }
                             .features__item-copy{
                             margin-left: 15px;
-                            font-weight: 700; 
+                            font-weight: 100; 
                         }
 
 

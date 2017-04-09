@@ -15,14 +15,22 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- Material Design Bootstrap -->
     <link href="css/mdb.css" rel="stylesheet"> 
-    <!-- Custom styles -->
+    <!-- Custom Styles -->
     <link href="css/custom.css" rel="stylesheet">  
+    <!-- Listing Widget -->
+    <link href="css/listing-widget.css" rel="stylesheet">  
     <!-- Google Font: Roboto -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en"> 
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 <style>
+    body {
+        font-weight:100;
+    }
     .container-fluid {
         max-width:2500px;
+    }
+    option{
+        color:#777;
     }
 </style>
 <body> 
@@ -75,8 +83,11 @@
                                                 <div class="md-form input-group" style="width: 100%;"> 
                                                     <input type="text" id="" class="form-control validate" placeholder="Location" aria-describedby="basic-addon2" required>
                                                 </div> 
+                                                <div class="md-form input-group" style="width: 100%;"> 
+                                                    <input type="text" id="" class="form-control validate" placeholder="Industry Focus" aria-describedby="basic-addon2" required>
+                                                </div> 
                                                 <div class="form-inline"> 
-                                                    <button type="submit" class="btn btn-primary text-uppercase" id="load" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Processing" style="display: inline-block; margin-right: 15px;">Subscribe</button>   
+                                                    <button type="submit" class="btn btn-primary text-uppercase">Subscribe</button>   
                                                 </div>
                                             </form>
                                         </div>
@@ -102,10 +113,9 @@
                         <div class="parallax-layer parallax-layer-base">
                             <div>
                                 <h1 class="mb-1">Sell your SaaS</h1> 
-                                <h3 class="mb-1"><b>Anonymously</b> list your company for sale.</br>200+ buyers will be notified.</h3>
-                                <div class="row">
-                                    <h1 class="text-muted counter" style="margin: 0;">1,457</h1>
-                                    <h3 class="text-muted">Companies in Database</h3>
+                                <h3 class="mb-1" style="line-height: 1.4;margin-bottom: 0 !important;"><b>Anonymously</b> list your company for sale.</br>200+ buyers will be notified.</h3>
+                                <div class="row" style="margin-bottom: 20px;">
+                                    <span class="text-muted counter" style="margin-right: 10px;font-size:40px;">1,457</span><span class="text-muted" style="font-size:25px;">Companies in Database</span> 
                                 </div>
                               <a type="button" id="apply" class="btn btn-primary text-uppercase clear-fix" href="#application" onclick="openSellerNav()" style="background-color: #f94b71;margin-right: 4px;">Apply</a>
                               <button type="button" id="buyer" class="btn btn-outline-success waves-effect" style="border: 2px solid #1de9b6;color: #1de9b6 !important;padding: 0.75rem 2.13rem;" onclick="openBuyerNav()">I'm a buyer</button>
@@ -155,6 +165,9 @@
                                                 .fancy-checkbox input[type="checkbox"]:checked ~ .unchecked
                                                 {
                                                     display: none;
+                                                }
+                                                .fancy-checkbox i {
+                                                    padding-left:10px;
                                                 }
                                             </style>
 
@@ -336,7 +349,7 @@
             <div class="col-lg-6 col-md-6 col-sm-11 col-xs-12 wow fadeInRight z-depth-1" data-wow-delay="0.2s" style="height:auto;background: linear-gradient(135deg,#4772d9 30%,#756de3 60%,#756de3);border-top-left-radius:6px;border-bottom-left-radius:6px;color:white;z-index:2000;float:right;">
                 
                                 <div id="calculator" class="section-heading__content-inner">
-                                  <h2 class="text-uppercase mb-1 wow fadeInDown section-heading__heading" data-wow-delay="0.2s" style="display:inline-block;padding-right: 0.5rem;margin-top: 15px;"><b>Evaluate Your SaaS</b></h2>
+                                  <h3 class="text-uppercase mb-1 wow fadeInDown section-heading__heading" data-wow-delay="0.2s" style="display:inline-block;padding-right: 0.5rem;margin-top: 15px;"><b>Evaluate Your SaaS</b></h3>
                                   <span class="section-heading__icon"></span> 
                                 </div>
 
@@ -349,7 +362,7 @@
                                     <input type="email" id="" class="form-control validate" placeholder="Type your Email" aria-describedby="basic-addon2" required>
                                 </div>
                                 <div class="md-form input-group"> 
-                                    <select id="industry" class="form-control" name="industry" placeholder="Industry" aria-describedby="basic-addon2" required>
+                                    <select id="industry" class="form-control mdb-select" name="industry" placeholder="Industry" aria-describedby="basic-addon2" required>
                                           <option value='1' data-othervalue='2'>Industry1</option>
                                           <option value='2' data-othervalue='3'>Industry2</option>
                                           <option value='3' data-othervalue='4'>Industry3</option>
@@ -390,27 +403,16 @@
                             width: 100%;
                         }
                         .box-btn {
-                          float: left;
-                          background: transparent;
-                          font-size: 0.8rem;
-                          color: rgba(0,0,0,0.3);
-                          font-weight: 300;
-                          cursor: pointer;
-                          border-radius: 2px;
-                          line-height: 0.5;
+                          background: transparent; 
+                          color: rgba(0,0,0,0.3); 
+                          cursor: pointer; 
                           border: none;
-                          outline: none;
-                          margin: 1rem 0;
-                        }
-                        .glyphicon {
-                          transition: color .3s linear;
-                        }  
-                        .box-btn .heart {
-                          color: #f94b71;
-                        }
+                          outline: none; 
+                          margin-bottom:;
+                        } 
                         </style>
                         <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12" style=" padding: 1rem 2rem;">
-                                <div class="row valuation" style="color:white;">
+                                <div class="row valuation" style="color:white; padding-bottom: 20px;">
                                     <!--<button type="submit" class="btn btn-primary text-uppercase" id="load" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Processing" style="display: inline-block; margin-right: 15px;margin-bottom: 20px;">Calculate</button>-->
                                     
                                         
@@ -425,9 +427,12 @@
                                         <h4 class="calculator">To:</h4>
                                         <input type="text" id="range-to" name="range-to" class="form-control counter" placeholder="$0" aria-label="Valuation range (to)" disabled>
                                     </div>
+                                    <button class="btn box-btn" id="load" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Processing" style="display: inline-block;margin-bottom: 20px;">Calculate</button>
+
+                                    </br>
+
                                     <small>The model above is intended more for educational purposes than for performing serious valuations.</br>Please read this 
-                                    <a href="#" id="disclaimer" data-toggle="tooltip" data-placement="bottom" title="Please note that this calculator is intended primarily for educational and entertainment purposes. Our goal is to highlight the key factors that investors tend to consider when evaluating the value of a potential investment, and to provide some directionally correct guidance. The actual results may make sense in some situations, but it will not in many others. There is no way that a 25-question multiple choice calculator can capture the many unique attributes of your business, so please do not rely on this model to make any financial decisions.">Important Disclaimer</a></small></br>
-                                    <a href="#" class="btn box-btn" ><span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>&nbsp;<span>I like it</span></a>
+                                    <a href="#" id="disclaimer" data-toggle="tooltip" data-placement="bottom" title="Please note that this calculator is intended primarily for educational and entertainment purposes. Our goal is to highlight the key factors that investors tend to consider when evaluating the value of a potential investment, and to provide some directionally correct guidance. The actual results may make sense in some situations, but it will not in many others. There is no way that a 25-question multiple choice calculator can capture the many unique attributes of your business, so please do not rely on this model to make any financial decisions.">Important Disclaimer</a></small>
                                 </div>
                                 
                         </div>
@@ -465,31 +470,61 @@
                     <div class="row" >
                         <div class="col-lg-1 col-md-1 col-sm-1 hidden-xs"></div>
                         <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12" style="padding-right:0;padding-left:0;">
-                            <h1 class="mb-1 wow fadeInDown" data-wow-delay="0.2s" style="padding-left:15px;">Featured Listings</h1>
+                            <h2 class="mb-1 wow fadeInDown" data-wow-delay="0.2s" style="padding-left:15px;">Featured Listings</h2>
+                            <button class="card-face__menu-button" data-card-menu="data-card-menu">Show Details</button> 
+                                            
                                             <!--Card 1-->
                                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="margin-top: 15px;">
-                                                <div class="card-overlay z-depth-1" style="background-image:url(img/mask.png);">
-                                                    <!--Content-->
-                                                    <div class="white-text text-center">
-                                                        <div class="card-block">
+                                                <div class="card card-overlay z-depth-1" style="background-image:url(img/mask.png);">
+                                                <!-- Face 2 -->
+                                                  <div class="card-face face-2"><!-- Back trigger -->
+                                                    
+                                                    <div class="card-block" style="margin-top: 40px;">
+                                                        <h4 class="white-text">Project title</h4>
+                                                        <p class="white-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry!</p>
+                                                        <div class="chip">AdTech</div>
+                                                        <div class="chip">Comtent Creation</div>
+                                                        <div class="chip">Marketing Tool</div>
+                                                         
+                                                    </div>
+                                                  </div><!-- Face 1 -->
+                                                  <div class="card-face face-1">
+                                                  <!-- Menu trigger -->
+                                                    <div class="card-block" style="margin-top: 40px;">
+                                                        <div class="white-text text-center">
                                                             <h3 class="teal-text "><i class="fa fa-pie-chart" aria-hidden="true"></i> AdTech</h3>
                                                             <h4 class="">Project title</h4>
                                                             <ul class="list-group">
-                                                              <li class="list-group-item"><span><b>MRR: </b></span>$ 150,000</li>
-                                                              <li class="list-group-item"><span><b>Employees: </b></span>56</li>
-                                                              <li class="list-group-item"><span><b>Location: </b></span>Estonia</li>
+                                                              <li class="list-group-item"><span><b>MRR: </b></span>$ 50,000</li>
+                                                              <li class="list-group-item"><span><b>Employees: </b></span>60</li>
+                                                              <li class="list-group-item"><span><b>Location: </b></span>Canada</li>
                                                             </ul>
                                                         </div>
                                                     </div>
+                                                  </div>
                                                 </div>
                                             </div>
                                             <!--/.Card-->
+
                                             <!--Card 2-->
                                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="margin-top: 15px;">
-                                                <div class="card-overlay z-depth-1" style="background-image:url(img/mask.png);">
-                                                    <!--Content-->
-                                                    <div class="white-text text-center">
-                                                        <div class="card-block">
+                                                <div class="card card-overlay z-depth-1" style="background-image:url(img/mask.png);">
+                                                <!-- Face 2 -->
+                                                  <div class="card-face face-2"><!-- Back trigger -->
+                                                    
+                                                    <div class="card-block" style="margin-top: 40px;">
+                                                        <h4 class="white-text">Project title</h4>
+                                                        <p class="white-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry!</p>
+                                                        <div class="chip">AdTech</div>
+                                                        <div class="chip">Comtent Creation</div>
+                                                        <div class="chip">Marketing Tool</div>
+                                                         
+                                                    </div>
+                                                  </div><!-- Face 1 -->
+                                                  <div class="card-face face-1">
+                                                  <!-- Menu trigger -->  
+                                                    <div class="card-block" style="margin-top: 40px;">
+                                                        <div class="white-text text-center">
                                                             <h3 class="teal-text "><i class="fa fa-cloud" aria-hidden="true"></i> Cloud Computing</h3>
                                                             <h4 class="">Project title</h4>
                                                             <ul class="list-group">
@@ -499,26 +534,40 @@
                                                             </ul>
                                                         </div>
                                                     </div>
+                                                  </div>
                                                 </div>
                                             </div>
                                             <!--/.Card-->
                                             <!--Card 3-->
                                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="margin-top: 15px;">
-                                                <div class="card-overlay z-depth-1" style="background-image:url(img/mask.png);">
-
-                                                    <!--Content-->
-                                                    <div class="white-text text-center">
-                                                        <div class="card-block">
+                                                <div class="card card-overlay z-depth-1" style="background-image:url(img/mask.png);">
+                                                <!-- Face 2 -->
+                                                  <div class="card-face face-2"><!-- Back trigger -->
+                                                     
+                                                    <div class="card-block" style="margin-top: 40px;">
+                                                        <h4 class="white-text">Project title</h4>
+                                                        <p class="white-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry!</p>
+                                                        <div class="chip">AdTech</div>
+                                                        <div class="chip">Comtent Creation</div>
+                                                        <div class="chip">Marketing Tool</div>
+                                                         
+                                                    </div>
+                                                  </div><!-- Face 1 -->
+                                                  <div class="card-face face-1">
+                                                  <!-- Menu trigger --> 
+                                                    <div class="card-block" style="margin-top: 40px;">
+                                                        <div class="white-text text-center">
                                                             <h3 class="teal-text "><i class="fa fa-laptop" aria-hidden="true"></i> HR Tech</h3>
                                                             <h4 class="">Project title</h4>
                                                             <ul class="list-group">
-                                                              <li class="list-group-item"><span><b>MRR: </b></span>$ 150,000</li>
-                                                              <li class="list-group-item"><span><b>Employees: </b></span>56</li>
-                                                              <li class="list-group-item"><span><b>Location: </b></span>Estonia</li>
+                                                              <li class="list-group-item"><span><b>MRR: </b></span>$ 200,000</li>
+                                                              <li class="list-group-item"><span><b>Employees: </b></span>20</li>
+                                                              <li class="list-group-item"><span><b>Location: </b></span>United States</li>
                                                             </ul>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                  </div>
+                                                </div> 
                                             </div>
                                             <!--/.Card-->
                         </div> 
@@ -529,8 +578,8 @@
                             
                                 <!--<h6 style="padding-left: 15px;">20,000+ design ready assets</br>for all your project needs!</h6>-->
                             <div class="col-lg-1 col-md-1 col-sm-1 hidden-xs"></div>
-                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12" style="padding-right:0;padding-left:0;">
-                                        <h1 class="mb-1 wow fadeInDown" data-wow-delay="0.2s" style="padding-left: 15px;">How it Works</h1>
+                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12" style="padding-right:0;padding-left:0;padding-top:2rem;">
+                                        <h2 class="mb-1 wow fadeInDown" data-wow-delay="0.2s" style="padding-left: 15px;">How it Works</h2>
                                         <div class="row wow fadeInLeft">
                                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-right">
                                                     <h2>Step 1</h2>
@@ -589,10 +638,10 @@
 
                         <div class="row">
                             <div class="col-lg-1 col-md-1 col-sm-1 hidden-xs"></div>
-                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12" style="padding-top:2rem;">
+                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12" style="padding-top:2rem;padding-bottom:2rem;">
                                 <div class="row">
-                                <h1 class="mb-1 wow fadeInDown" data-wow-delay="0.2s">Latest News on SaaS M&A</h1>
-                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="padding-right:0;padding-left:0;">
+                                <h2 class="mb-1 wow fadeInDown" data-wow-delay="0.2s">Latest News on SaaS M&A</h2>
+                                    <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12" style="padding-right:0;padding-left:0;">
                                         <!--Jumbotron-->
                                         <div class="jumbotron">
                                             <section id="content">
@@ -617,8 +666,8 @@
                                         <!--/.Jumbotron-->
                                     </div>
                                     <div class="col-lg-1 col-md-1 hidden-sm hidden-xs"></div>
-                                    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12" style="padding-right: 0; padding-left: 0;">
-                                        <h3 style="color:#333;margin-bottom: 15px;">You can subscribe for the latest M&A deals. Just select the Industry your SaaS covers and we will send it to your Inbox weekly.</h3>
+                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style="padding-right: 0; padding-left: 0;">
+                                        <h4 style="margin-bottom: 15px;">You can subscribe for the latest M&A deals. Just select the Industry your SaaS covers and we will send it to your Inbox weekly.</h4>
                                         <form id="subscribe" data-toggle="validator" role="form">
                                             <div class="md-form input-group" style="width: 100%;"> 
                                                 <select id="industry2" class="form-control" name="industry" placeholder="Industry" aria-describedby="basic-addon2" required>
@@ -688,7 +737,7 @@
                 </g>
                 </svg>
                 <b>SaaS</b>Nomad</a>
-                <ul style=" margin: 0 0 0 20px;">
+                <ul style=" margin: 17px 0 0 20px;">
                     <li>
                       <a href="#" class="text-uppercase">
                         <b>FAQ</b>
@@ -728,7 +777,7 @@
     <!-- Bootstrap tooltips -->
     <script type="text/javascript" src="js/tether.js"></script>
     <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <script type="text/javascript" src="js/mdb.min.js"></script> 
     <!-- Bootstrap Form validator -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
     <!-- Counter -->
@@ -740,6 +789,8 @@
     <script src="js/multistep-form.js"></script>
     <!-- Custom JavaScript -->
     <script type="text/javascript" src="js/custom.js"></script>
+    <!-- Listing Widget -->
+    <script type="text/javascript" src="js/listing-widget.js"></script>
 
     <!-- Number formatting -->
     <script type="text/javascript" src="js/jquery.number.js"></script>
@@ -753,16 +804,9 @@
                 $("seller-mrr-growth").number(true); 
                 $("seller-employee-number").number(true); 
             });
-        </script>
-    
- <script>
-        $(function($) {
-          $(document).on('click', '.box-btn', function(event) {
-            $(this).find('.glyphicon').toggleClass('heart').toggleClass('glyphicon-heart-empty glyphicon-heart');
-          });
-        });
+    </script>
 
-</script>
+    
 </body>
 
 </html>
