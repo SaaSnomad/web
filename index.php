@@ -18,7 +18,7 @@
     <!-- Custom Styles -->
     <link href="css/custom.css" rel="stylesheet">  
     <!-- Listing Widget -->
-    <link href="css/listing-widget.css" rel="stylesheet">  
+    <link href="css/card.css" rel="stylesheet">  
     <!-- Google Font: Roboto -->
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
@@ -71,20 +71,25 @@
                                             <!--Email validation--> 
                                             <h2 class="" style="color:white;">Buyer Application</h2>
                                             <p style="color:#1de9b6;">Subscribe for Featured Listings<p>
-                                                <div class="md-form input-group" style="width: 100%;"> 
-                                                    <input name="buyer_name" type="text" id="" class="form-control validate" placeholder="Name" aria-describedby="basic-addon2" required>
+                                                <div class="md-form input-group" style="width: 100%;margin-top: 40px;"> 
+                                                    <input name="buyer_name" type="text" id="buyer_name" class="form-control validate" aria-describedby="basic-addon2" required>
+                                                    <label for="buyer_name" style="font-weight: 100;">Name</label> 
                                                 </div> 
                                                 <div class="md-form input-group" style="width: 100%;"> 
-                                                    <input name="buyer_email" type="email" id="" class="form-control validate" placeholder="Email" aria-describedby="basic-addon2" required>
+                                                    <input name="buyer_email" type="email" id="buyer_email" class="form-control validate" aria-describedby="basic-addon2" required>
+                                                    <label for="buyer_email" style="font-weight: 100;">Email</label> 
                                                 </div>
                                                 <div class="md-form input-group" style="width: 100%;"> 
-                                                    <input name="buyer_company" type="text" id="" class="form-control validate" placeholder="Company Name" aria-describedby="basic-addon2" required>
+                                                    <input name="buyer_company" type="text" id="buyer_company" class="form-control validate" aria-describedby="basic-addon2" required>
+                                                    <label for="buyer_company" style="font-weight: 100;">Company</label>
                                                 </div> 
                                                 <div class="md-form input-group" style="width: 100%;"> 
-                                                    <input name="buyer_location" type="text" id="" class="form-control validate" placeholder="Location" aria-describedby="basic-addon2" required>
+                                                    <input name="buyer_location" type="text" id="buyer_location" class="form-control validate" aria-describedby="basic-addon2" required>
+                                                    <label for="buyer_location" style="font-weight: 100;">Location</label>
                                                 </div> 
                                                 <div class="md-form input-group" style="width: 100%;"> 
-                                                    <input name="buyer_industry" type="text" id="" class="form-control validate" placeholder="Industry Focus" aria-describedby="basic-addon2" required>
+                                                    <input name="buyer_industry" type="text" id="buyer_industry" class="form-control validate" aria-describedby="basic-addon2" required>
+                                                    <label for="buyer_industry" style="font-weight: 100;">Industry Focus</label>
                                                 </div> 
                                                 <div class="form-inline"> 
                                                     <button name="subscribe" type="submit" class="btn btn-primary text-uppercase">Subscribe</button>   
@@ -320,7 +325,7 @@
                                                
 
                                                 <input type="button" name="previous" class="previous action-button" value="Previous" i style="display: inline-block; margin-right: 15px;background-color: transparent;text-transform:uppercase;font-weight:bold;"/>
-                                                <button name="sendOffer" type="submit" class="btn btn-success">Send</button>
+                                                <button name="sendOffer" type="submit" class="btn btn-success text-uppercase">Send for review</button>
                                                 <!--<button name="sendOffer" type="submit" class="submit action-button btn-primary" value="Send for Review" i style="display: inline-block; padding:0.85rem 2.13rem;width:auto;text-transform:uppercase;"/></button>-->
                                               </fieldset>
                                             
@@ -474,140 +479,124 @@
                         <div class="col-lg-1 col-md-1 col-sm-1 hidden-xs"></div>
                         <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12" style="padding-right:0;padding-left:0;">
                             <h2 class="mb-1 wow fadeInDown" data-wow-delay="0.2s" style="padding-left:15px;">Featured Listings</h2>
-                            <button class="card-face__menu-button" data-card-menu="data-card-menu">Show Details</button> 
-                                            
                                             <!--Card 1-->
-                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="margin-top: 15px;">
-                                                <div class="card card-overlay z-depth-1" style="background-image:url(img/mask.png);">
-                                                <!-- Face 2 -->
-                                                  <div class="card-face face-2"><!-- Back trigger -->
-                                                    
-                                                    <div class="card-block" style="margin-top: 40px;">
-                                                        <h4 class="white-text">Project title</h4>
-                                                        <p class="white-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry!</p>
+                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="margin-top: 15px;height: 198px;">
+                                                <div class="card-container1">
+                                                    <div class="card card--front1"> 
+                                                      <div class="white-text text">
+                                                        <header class="head">
+                                                          <h3 class="head__name" style="margin-top:0;">
+                                                            <b class="name__fn">Ad</b>Tech
+                                                          </h3>
+                                                          <p class="head__subtitle">$ 20,000 MRR<br>5 Employees<br>United States</p>
+                                                        </header>
+                                                      </div>
+                                                    </div>
+
+                                                    <div class="card card--back1">
+                                                      <div class="card__content text white-text">
+                                                        <h4 style="font-weight: 400;">Project title</h4>
+                                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry!</p>
                                                         <div class="chip">AdTech</div>
-                                                        <div class="chip">Comtent Creation</div>
+                                                        <div class="chip">Content Creation</div>
                                                         <div class="chip">Marketing Tool</div>
-                                                         
-                                                    </div>
-                                                  </div><!-- Face 1 -->
-                                                  <div class="card-face face-1">
-                                                  <!-- Menu trigger -->
-                                                    <div class="card-block" style="margin-top: 40px;">
-                                                        <div class="white-text text-center">
-                                                            <h3 class="teal-text "><i class="fa fa-pie-chart" aria-hidden="true"></i> AdTech</h3>
-                                                            <h4 class="">Project title</h4>
-                                                            <ul class="list-group">
-                                                              <li class="list-group-item"><span><b>MRR: </b></span>$ 50,000</li>
-                                                              <li class="list-group-item"><span><b>Employees: </b></span>60</li>
-                                                              <li class="list-group-item"><span><b>Location: </b></span>Canada</li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                  </div>
-                                                </div>
+                                                      </div>
+                                                    </div> 
+                                                </div> 
                                             </div>
-                                            <!--/.Card-->
+                                            <!--/.Card--> 
+
+
 
                                             <!--Card 2-->
-                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="margin-top: 15px;">
-                                                <div class="card card-overlay z-depth-1" style="background-image:url(img/mask.png);">
-                                                <!-- Face 2 -->
-                                                  <div class="card-face face-2"><!-- Back trigger -->
-                                                    
-                                                    <div class="card-block" style="margin-top: 40px;">
-                                                        <h4 class="white-text">Project title</h4>
-                                                        <p class="white-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry!</p>
+                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="margin-top: 15px;height: 198px;">
+                                                <div class="card-container2">
+                                                    <div class="card card--front2"> 
+                                                      <div class="white-text text">
+                                                        <header class="head">
+                                                          <h3 class="head__name" style="margin-top:0;">
+                                                            <b class="name__fn">Cloud</b>
+                                                            Computing
+                                                          </h3>
+                                                          <p class="head__subtitle">$ 150,000 MRR<br>56 Employees<br>Estonia</p>
+                                                        </header>
+                                                      </div>
+                                                    </div>
+
+                                                    <div class="card card--back2">
+                                                      <div class="card__content text white-text">
+                                                        <h4 style="font-weight: 400;">Project title</h4>
+                                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry!</p>
                                                         <div class="chip">AdTech</div>
-                                                        <div class="chip">Comtent Creation</div>
+                                                        <div class="chip">Content Creation</div>
                                                         <div class="chip">Marketing Tool</div>
-                                                         
-                                                    </div>
-                                                  </div><!-- Face 1 -->
-                                                  <div class="card-face face-1">
-                                                  <!-- Menu trigger -->  
-                                                    <div class="card-block" style="margin-top: 40px;">
-                                                        <div class="white-text text-center">
-                                                            <h3 class="teal-text "><i class="fa fa-cloud" aria-hidden="true"></i> Cloud Computing</h3>
-                                                            <h4 class="">Project title</h4>
-                                                            <ul class="list-group">
-                                                              <li class="list-group-item"><span><b>MRR: </b></span>$ 150,000</li>
-                                                              <li class="list-group-item"><span><b>Employees: </b></span>56</li>
-                                                              <li class="list-group-item"><span><b>Location: </b></span>Estonia</li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                            </div>
-                                            <!--/.Card-->
-                                            <!--Card 3-->
-                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="margin-top: 15px;">
-                                                <div class="card card-overlay z-depth-1" style="background-image:url(img/mask.png);">
-                                                <!-- Face 2 -->
-                                                  <div class="card-face face-2"><!-- Back trigger -->
-                                                     
-                                                    <div class="card-block" style="margin-top: 40px;">
-                                                        <h4 class="white-text">Project title</h4>
-                                                        <p class="white-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry!</p>
-                                                        <div class="chip">AdTech</div>
-                                                        <div class="chip">Comtent Creation</div>
-                                                        <div class="chip">Marketing Tool</div>
-                                                         
-                                                    </div>
-                                                  </div><!-- Face 1 -->
-                                                  <div class="card-face face-1">
-                                                  <!-- Menu trigger --> 
-                                                    <div class="card-block" style="margin-top: 40px;">
-                                                        <div class="white-text text-center">
-                                                            <h3 class="teal-text "><i class="fa fa-laptop" aria-hidden="true"></i> HR Tech</h3>
-                                                            <h4 class="">Project title</h4>
-                                                            <ul class="list-group">
-                                                              <li class="list-group-item"><span><b>MRR: </b></span>$ 200,000</li>
-                                                              <li class="list-group-item"><span><b>Employees: </b></span>20</li>
-                                                              <li class="list-group-item"><span><b>Location: </b></span>United States</li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                  </div>
+                                                      </div>
+                                                    </div> 
                                                 </div> 
                                             </div>
                                             <!--/.Card-->
+                                            <!--Card 3-->
+                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="margin-top: 15px;height: 198px;">
+                                                <div class="card-container3">
+                                                    <div class="card card--front3"> 
+                                                      <div class="white-text text">
+                                                        <header class="head">
+                                                          <h3 class="head__name" style="margin-top:0;">
+                                                            <b class="name__fn">HR</b>Tech
+                                                          </h3>
+                                                          <p class="head__subtitle">$ 50,000 MRR<br>10 Employees<br>Canada</p>
+                                                        </header>
+                                                      </div>
+                                                    </div>
+
+                                                    <div class="card card--back3">
+                                                      <div class="card__content text white-text">
+                                                        <h4 style="font-weight: 400;">Project title</h4>
+                                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry!</p>
+                                                        <div class="chip">AdTech</div>
+                                                        <div class="chip">Content Creation</div>
+                                                        <div class="chip">Marketing Tool</div>
+                                                      </div>
+                                                    </div> 
+                                                </div> 
+                                            </div>
+                                            <!--/.Card-->                                            
+                                             
                         </div> 
                         <div class="col-lg-1 col-md-1 col-sm-1 hidden-xs"></div>
                     </div>             
                         
-                        <div class="row" style="padding-bottom: 2rem;display: flex;align-items: center;">
+                        <div class="row" style="padding-bottom: 6rem;padding-top:6rem;display: flex;align-items: center;">
                             
                                 <!--<h6 style="padding-left: 15px;">20,000+ design ready assets</br>for all your project needs!</h6>-->
                             <div class="col-lg-1 col-md-1 col-sm-1 hidden-xs"></div>
-                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12" style="padding-right:0;padding-left:0;padding-top:2rem;">
+                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12" style="padding-right:0;padding-left:0;">
                                         <h2 class="mb-1 wow fadeInDown" data-wow-delay="0.2s" style="padding-left: 15px;">How it Works</h2>
-                                        <div class="row wow fadeInLeft">
-                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-right">
-                                                    <h2>Step 1</h2>
-                                                    <h3>Lorem Ipsum is simply dummy text of the printing and typesetting industry!</h3>
+                                        <div class="row wow fadeInLeft" style="display: flex;align-items: center;">
+                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-right" style="align-items: stretch;">
+                                                    <h3 style="font-weight: 300;">Apply SaaS for Review</h3>
+                                                    <h4>Lorem Ipsum is simply</br>dummy text of the printing</br>and typesetting industry!</43>
                                                 </div>
                                                 <div class="col-lg-3 col-md-3 col-sm-6 hidden-xs">
                                                     <img class="features__icon" src="img/svg/layers2.svg">
                                                 </div>
                                                 <div class="col-lg-3 col-md-3 hidden-sm"></div>                            
                                         </div>
-                                        <div class="row wow fadeInRight">
+                                        <div class="row wow fadeInRight" style="display: flex;align-items: center;">
                                             <div class="col-lg-3 col-md-3 hidden-sm"></div>
                                             <div class="col-lg-3 col-md-3 col-sm-6 hidden-xs text-right">
                                                 <img class="features__icon" src="img/svg/swatch.svg">
                                             </div>
-                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                <h2>Step 2</h2>
-                                                <h3>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</h3>
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="align-items: stretch;">
+                                                <h3 style="font-weight: 300;">Buyers Get Notified</h3>
+                                                <h4>Lorem Ipsum has been</br>the industry's standard dummy text</br>ever since the 1500s</h4>
                                             </div>
                                         </div>
-                                        <div class="row wow fadeInLeft">
+                                        <div class="row wow fadeInLeft" style="display: flex;align-items: center;">
                                         <!-- display: flex;align-items: center;-->
-                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-right">
-                                                <h2>Step 3</h2>
-                                                <h3>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged</h3>
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-right" style="align-items: stretch;">
+                                                <h3 style="font-weight: 300;">Receive Offers</h3>
+                                                <h4>You get requests from</br>intrested buyers and decide</br>to whom to reveal your contacts</h4>
                                             </div>
                                             <div class="col-lg-3 col-md-3 col-sm-6 hidden-xs">
                                                 <img class="features__icon" src="img/svg/venn.svg">
@@ -621,75 +610,62 @@
                         <style>
                         @media screen and (max-width: 768px) {
                             .text-right  {text-align: left !important;} 
-                        }
-                            #industry2 { /* Chrome/Opera/Safari */
-                              color: #777;
-                            }
-                            #free-data::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-                              color: #777;
-                            }
-                            #indufree-datastry::-moz-placeholder { /* Firefox 19+ */
-                              color: #777;
-                            }
-                            #free-data:-ms-input-placeholder { /* IE 10+ */
-                              color: #777;
-                            }
-                            #free-data:-moz-placeholder { /* Firefox 18- */
-                              color: #777;
-                            }
+                        }  
                         </style>
 
                         <div class="row">
                             <div class="col-lg-1 col-md-1 col-sm-1 hidden-xs"></div>
-                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12" style="padding-top:2rem;padding-bottom:2rem;">
+                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12" style="padding-bottom:6rem;">
                                 <div class="row">
                                 <h2 class="mb-1 wow fadeInDown" data-wow-delay="0.2s">Latest News on SaaS M&A</h2>
-                                    <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12" style="padding-right:0;padding-left:0;">
-                                        <!--Jumbotron-->
-                                        <div class="jumbotron">
-                                            <section id="content">
-                                              <div id="container">
-                                                <a href="https://techcrunch.com/gallery/the-11-biggest-tech-acquisitions-of-2016/" class="article"  target="_blank">
-                                                    <h3 class="mb-1 ">The 11 biggest tech acquisitions of 2016</h3>
-                                                    <span class="mb-1 text-muted">Jan 3, 2017 <b>Techcrunch</b></span>
-                                                </a>  
-                                                <a href="https://techcrunch.com/2016/11/21/what-does-trump-mean-for-tech-ma/" class="article"  target="_blank">
-                                                    <h3 class="mb-1">What does Trump mean for tech M&A?</h3>
-                                                    <span class="mb-1 text-muted">Nov 21, 2016 <b >Techcrunch</b></span>
-                                                </a> 
-                                                <a href="https://techcrunch.com/2016/07/03/what-this-years-ma-activity-tells-us-about-media-and-entertainment/" class="article" target="_blank">
-                                                    <h3 class="mb-1">What this year’s M&A activity tells us about media and entertainment </h3>
-                                                    <span class="mb-1 text-muted">Jul 3, 2016 <b>Techcrunch</b></span>
-                                                </a>                                      
-
-                                              </div>
-                                            </section>
-                                             
-                                        </div> 
-                                        <!--/.Jumbotron-->
-                                    </div>
-                                    <div class="col-lg-1 col-md-1 hidden-sm hidden-xs"></div>
-                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style="padding-right: 0; padding-left: 0;">
-                                        <h4 style="margin-bottom: 15px;">You can subscribe for the latest M&A news. Just select the Industry your SaaS covers and we will send it to your Inbox weekly.</h4>
-                                        <form id="subscribe" data-toggle="validator" role="form">
-                                            <div class="md-form input-group" style="width: 100%;"> 
-                                                <select id="industry2" class="form-control" name="industry" placeholder="Industry" aria-describedby="basic-addon2" required>
-                                                      <option value='1' data-othervalue='2'>Industry 1</option>
-                                                      <option value='2' data-othervalue='3'>Industry 2</option>
-                                                      <option value='3' data-othervalue='4'>Industry 3</option>
-                                                      <option value='4' data-othervalue='5'>Industry 4</option>
-                                                      <option value='5' data-othervalue='6'>Industry 5</option>
-                                                </select> 
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-right:0;padding-left:0;">
+                                       
+                                            
+                                                <!--Jumbotron-->
+                                                <div class="jumbotron" style="overflow: auto;padding:0;margin: 0; margin-top: 15px;">
+                                                    <section id="content">
+                                                      <div id="container">
+                                                        <div class="row" style="display: flex;align-items: stretch;">
+                                                            <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12" style="padding: 40px 60px 60px;">
+                                                                <a href="https://techcrunch.com/gallery/the-11-biggest-tech-acquisitions-of-2016/" class="article"  target="_blank">
+                                                                    <h3 class="mb-1 ">The 11 biggest tech acquisitions of 2016</h3>
+                                                                    <span class="mb-1 text-muted">Jan 3, 2017 <b>Techcrunch</b></span>
+                                                                </a>  
+                                                                <a href="https://techcrunch.com/2016/11/21/what-does-trump-mean-for-tech-ma/" class="article"  target="_blank">
+                                                                    <h3 class="mb-1">What does Trump mean for tech M&A?</h3>
+                                                                    <span class="mb-1 text-muted">Nov 21, 2016 <b >Techcrunch</b></span>
+                                                                </a> 
+                                                                <a href="https://techcrunch.com/2016/07/03/what-this-years-ma-activity-tells-us-about-media-and-entertainment/" class="article" target="_blank">
+                                                                    <h3 class="mb-1">What this year’s M&A activity tells us about media and entertainment </h3>
+                                                                    <span class="mb-1 text-muted">Jul 3, 2016 <b>Techcrunch</b></span>
+                                                                </a>   
+                                                                <a href="https://techcrunch.com/2016/11/21/what-does-trump-mean-for-tech-ma/" class="article"  target="_blank">
+                                                                    <h3 class="mb-1">What does Trump mean for tech M&A?</h3>
+                                                                    <span class="mb-1 text-muted">Nov 21, 2016 <b >Techcrunch</b></span>
+                                                                </a> 
+                                                                <a href="#" target="_blank" style="text-transform:uppercase;font-weight:bold;color:#777;display:block;float: right;margin-top: 50px;">Read More</a>
+                                                            </div>                                  
+                                                            <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 white-text" style="padding:60px;align-items: center;display: flex;background: #263238;">
+                                                                <div>
+                                                                    <h4 style="margin-bottom: 15px;">You can subscribe for the latest M&A news. Just enter your Email and we will send it to your Inbox weekly.</h4>
+                                                                    <form id="subscribe" data-toggle="validator" role="form">
+                                                                        <div class="md-form input-group" style="margin: 20px 0;width: 100%;">
+                                                                            <input type="email" id="free-data" class="form-control validate" placeholder="example@gmail.com">
+                                                                        </div>
+                                                                        <div class="md-form input-group" style="margin: 20px 0;width: 100%;">
+                                                                            <button class="btn btn-primary btn-lg" type="button" style="width: 100%;">Subscribe</button>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                      </div>
+                                                    </section>
+                                                     
+                                                </div> 
                                             </div>
-                                            <div class="md-form input-group" style="margin: 20px 0;width: 100%;">
-                                                <input type="email" id="free-data" class="form-control validate" style="color:#333;" placeholder="example@gmail.com">
-                                            </div>
-                                            <div class="md-form input-group" style="margin: 20px 0;width: 100%;">
-                                                <button class="btn btn-primary btn-lg" type="button" style="width: 100%;">Subscribe</button>
-                                            </div>
-                                        </form>
+                                            <!--/.Jumbotron-->
                                         
-                                    </div>
+                                    </div> 
                                 </div>
                             </div>
                             <div class="col-lg-1 col-md-1 col-sm-1 hidden-xs"></div>
@@ -791,10 +767,9 @@
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
     <script src="js/multistep-form.js"></script>
     <!-- Custom JavaScript -->
-    <script type="text/javascript" src="js/custom.js"></script>
-    <!-- Listing Widget -->
-    <script type="text/javascript" src="js/listing-widget.js"></script>
-
+    <script type="text/javascript" src="js/custom.js"></script> 
+    <!-- Card Widget -->
+    <script type="text/javascript" src="js/card.js"></script>
     <!-- Number formatting -->
     <script type="text/javascript" src="js/jquery.number.js"></script>
     <script type="text/javascript">
