@@ -114,7 +114,7 @@
                 <div class="parallax">
                     <div class="parallax-section">
                         <div class="parallax-layer parallax-layer-base">
-                            <div>
+                            <div class="main-text">
                                 <h1 class="mb-1">Sell your SaaS</h1> 
                                 <h3 class="mb-1" style="line-height: 1.4;margin-bottom: 0 !important;"><b>Anonymously</b> list your company for sale.</br>200+ buyers will be notified.</h3>
                                 <div class="row" style="margin-bottom: 20px;">
@@ -500,6 +500,7 @@
                                                         <div class="chip">AdTech</div>
                                                         <div class="chip">Content Creation</div>
                                                         <div class="chip">Marketing Tool</div>
+                                                        <a href="#" target="_blank" style="text-transform:uppercase;font-weight:bold;display:block;float: right;margin-top: 50px;">Details</a>
                                                       </div>
                                                     </div> 
                                                 </div> 
@@ -530,6 +531,7 @@
                                                         <div class="chip">AdTech</div>
                                                         <div class="chip">Content Creation</div>
                                                         <div class="chip">Marketing Tool</div>
+                                                        <a href="#" target="_blank" style="text-transform:uppercase;font-weight:bold;display:block;float: right;margin-top: 50px;">Details</a>
                                                       </div>
                                                     </div> 
                                                 </div> 
@@ -556,6 +558,7 @@
                                                         <div class="chip">AdTech</div>
                                                         <div class="chip">Content Creation</div>
                                                         <div class="chip">Marketing Tool</div>
+                                                        <a href="#" target="_blank" style="text-transform:uppercase;font-weight:bold;display:block;float: right;margin-top: 50px;">Details</a>
                                                       </div>
                                                     </div> 
                                                 </div> 
@@ -582,7 +585,7 @@
                                                 </div>
                                                 <div class="col-lg-3 col-md-3 hidden-sm"></div>                            
                                         </div>
-                                        <div class="row wow fadeInRight" style="display: flex;align-items: center;">
+                                        <div class="row wow fadeInRight step-2" style="display: flex;align-items: center;">
                                             <div class="col-lg-3 col-md-3 hidden-sm"></div>
                                             <div class="col-lg-3 col-md-3 col-sm-6 hidden-xs text-right">
                                                 <img class="features__icon" src="img/svg/swatch.svg">
@@ -610,6 +613,9 @@
                         <style>
                         @media screen and (max-width: 768px) {
                             .text-right  {text-align: left !important;} 
+                            .step-2{display:initial !important;}
+                            .main-text {text-align: center !important;} 
+                            .news { display: initial !important;}
                         }  
                         </style>
 
@@ -622,11 +628,11 @@
                                        
                                             
                                                 <!--Jumbotron-->
-                                                <div class="jumbotron" style="overflow: auto;padding:0;margin: 0; margin-top: 15px;">
+                                                <div class="news-wrapper" style="overflow: auto;padding:0;margin: 0; margin-top: 15px;border-radius:6px;">
                                                     <section id="content">
                                                       <div id="container">
-                                                        <div class="row" style="display: flex;align-items: stretch;">
-                                                            <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12" style="padding: 40px 60px 60px;">
+                                                        <div class="row news" style="display: flex;align-items:stretch;">
+                                                            <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12" style="padding: 40px 60px 60px;background-color: rgba(255,255,255,.8);">
                                                                 <a href="https://techcrunch.com/gallery/the-11-biggest-tech-acquisitions-of-2016/" class="article"  target="_blank">
                                                                     <h3 class="mb-1 ">The 11 biggest tech acquisitions of 2016</h3>
                                                                     <span class="mb-1 text-muted">Jan 3, 2017 <b>Techcrunch</b></span>
@@ -645,7 +651,7 @@
                                                                 </a> 
                                                                 <a href="#" target="_blank" style="text-transform:uppercase;font-weight:bold;color:#777;display:block;float: right;margin-top: 50px;">Read More</a>
                                                             </div>                                  
-                                                            <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 white-text" style="padding:60px;align-items: center;display: flex;background: #263238;">
+                                                            <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 white-text" style="padding:60px;background: #263238;display: flex;align-items: center;">
                                                                 <div>
                                                                     <h4 style="margin-bottom: 15px;">You can subscribe for the latest M&A news. Just enter your Email and we will send it to your Inbox weekly.</h4>
                                                                     <form id="subscribe" data-toggle="validator" role="form">
