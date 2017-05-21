@@ -8,7 +8,9 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <title>Welcome to SaaSNomad</title>
-    
+    <!-- Favicon -->
+    <link rel="icon" href="img/logo.png" type="image/png" sizes="16x16"> 
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
     <!-- Font Awesome -->
@@ -22,16 +24,17 @@
     <!-- Material Design Bootstrap -->
     <link href="css/mdb.css" rel="stylesheet"> 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
-    <!-- Modal -->
-    <link href="css/modal.css" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css"> 
     <!-- Load More -->
     <link rel="stylesheet" href="css/load-more.css"> 
     <!-- Select Jquery Chosen Plugin-->
     <link rel="stylesheet" href="css/chosen.css"> 
     <!-- Checkbox -->
     <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
-    <link rel="stylesheet" href="css/checkbox.css">
+    <link rel="stylesheet" href="css/checkbox.css"> 
+    <!-- Carousel -->
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css'>
+    <link rel="stylesheet" href="css/slick.css">
 
     <style>
                     ::-webkit-scrollbar {
@@ -50,7 +53,7 @@
                         background: rgba(0,0,0, 0.5);
                     }
                     small {
-                        font-size: 73%;
+                        font-size: 70%;
                     }
                     .chosen-container {
                         width:100% !important;
@@ -132,14 +135,18 @@
                     .checkbox-label {
                         color: #757575;
                         font-size: 0.8rem;
+                    }  
+                    #how-h1 {
+                        text-align: -moz-center;
+                        text-align: -webkit-center;
+                        text-align: center;
                     }
-                     
     </style> 
     <script src='https://www.google.com/recaptcha/api.js'></script>      
+                    
 </head>
 
 <body>
-
     <!--/.Navbar-->
     
     <!--Navbar-->
@@ -148,7 +155,7 @@
             <div class="col-6">
                 <h4 class="text-muted" id="logo" >
                     <a class="text-muted" href="#">
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" height="2rem" viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;vertical-align: text-bottom;" xml:space="preserve">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" height="20px" width="20px" viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;vertical-align: text-middle;" xml:space="preserve">
                         <g>
                             <g id="Ellipse_4_copy_5">
                                 <g>
@@ -161,10 +168,18 @@
                 </h4>
             </div>
             <div class="col-6">
-                <a class="btn scrolling-navbar text-center flex-center mdl-button--raised mdl-js-button dialog-button" id="apply-navbar" style="height:100%;font-size: 22px;">Apply for free</a> 
+                <a class="btn scrolling-navbar text-center flex-center"  data-toggle="modal" data-target="#sellerModal"  id="apply-navbar" style="height:100%;font-size: 22px;">Apply for free</a> 
             </div>
         </div>
     </header> 
+
+
+
+                
+            
+
+
+
     <div id="top"></div>
     <!-- Main container-->
     <div class="container-fluid" id="main">
@@ -174,15 +189,17 @@
             <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 text-center" style="height:auto;">
                 <div class="main-text" style="height: 100%;padding: 70px 0;">
                     <h1 class="display-4">Anonymously</br>place your SaaS</br>for sale</h1>  
-                    <a id="seller" class="btn btn-secondary mdl-button--raised mdl-js-button dialog-button" style="margin: 1.5rem 0;font-size: 22px;">
+                    <a id="seller" class="btn btn-secondary" data-toggle="modal" data-target="#sellerModal" style="margin: 1.5rem 0;font-size: 22px;">
                         apply</br>for free
                     </a>
+ 
+
                     <h3 class="text-center text-muted" style="margin-top: 0.5rem;">There currently are</br>
                     <span class="counter">1,234</span> Sellers</h3>
                 </div>
             </div> 
                                    
-            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 wow fadeInRight z-depth-1" data-wow-delay="0.2s" style="height:auto;padding:0;border-top-left-radius:6px;border-bottom-left-radius:6px;">
+            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 wow fadeInRight z-depth-1" data-wow-delay="0.2s" style="height:100%;padding:0;border-top-left-radius:6px;border-bottom-left-radius:6px;">
                 <div id="calculator-wrapper" class="white-text">
                     <h3 class="text-uppercase mb-1" style="padding: 2rem 2rem 0;"><b>Get your valuation range</b></h3>
                     <div class="row form-wrapper">
@@ -207,7 +224,7 @@
                                 <!-- Calculator MRR Growth % -->
                                 <div class="md-form form-group">
                                     <span class="input-group-addon" style="position: absolute;bottom:0;width:2%;border-bottom: none !important;padding-left: 0;padding-right: 0;">%</span>
-                                    <input type="text" name="calculatorMrrGrowth" id="calculatorMrrGrowth" placeholder=", MRR Growth" class="form-control validate change" maxlength="4" aria-label="Amount (to the nearest dollar)" style="padding-left: 6%;width: 94%;" required>
+                                    <input type="text" name="calculatorMrrGrowth" id="calculatorMrrGrowth" placeholder=", MRR Monthly Growth" class="form-control validate change" maxlength="4" aria-label="Amount (to the nearest dollar)" style="padding-left: 6%;width: 94%;" required>
                                 </div>
                                 <!-- Calculator Number of Employees -->
                                 <div class="md-form form-group"> 
@@ -216,6 +233,7 @@
                                 <!-- Calculator Email -->
                                 <div class="md-form form-group">
                                     <input type="email" name="calculatorEmail" id="calculatorEmail" placeholder="Type your Email" class="form-control validate change" maxlength="50" required>
+                                    <div class="help-block with-errors" style="color:yellow;"></div> 
                                 </div>
                                 <!-- Calculator Range From -->
                                 <input class="range-from" type="text" name="rangeFrom" style="display:none;" />
@@ -224,12 +242,9 @@
                                 <!-- Location -->
                                 <input class="geotext[country]" type="text" name="calculatorLocation" style="display:none;"  />
 
-                                <small>We respect your privacy and will not spam you</small>
-                                <small>All fields are required</small>
-
                                 <div class="md-form form-group">
-                                    <button type="submit" class="btn" name="myButton" id="myButton" style="margin: 10px 15px 0 0;background-color: #0275d8;padding: 0.85rem 1rem;">Calculate</button>
-                                    <button type="button" class="btn" onclick="resetForm(this.form);" style="margin:10px 0 0;background-color: #0275d8;padding: 0.85rem 1rem;">Reset</button>
+                                    <button type="submit" class="btn" name="myButton" id="myButton" style="width:59%;margin: 10px 15px 0 0;background-color: #0275d8;padding: 0.85rem 1rem;">Calculate</button>
+                                    <button type="button" class="btn waves-effect waves-light" onclick="resetForm(this.form);" style="margin:10px 0 0;background-color:transparent; padding: 0.85rem 1rem;">Reset</button>
                                 </div>
                             </form>
                             
@@ -251,8 +266,9 @@
 
                             </br>
 
-                            <small>The model above is intended more for educational purposes than for performing serious valuations.</br>Please read this 
-                            <a href="disclaimer.html" target="_blank" id="disclaimer" style="color:#fff;text-decoration:underline;" id="demo-show-toast" class="mdl-button mdl-js-button mdl-button--raised" >Important Disclaimer</a></small> 
+                            <small>The model above is intended more for educational purposes than for performing serious valuations. Please read this 
+                            <a href="disclaimer.html" target="_blank" id="disclaimer" style="color:#fff;text-decoration:underline;" id="demo-show-toast" class="mdl-button mdl-js-button mdl-button--raised">Important Disclaimer.</a></small> 
+                            <small>We respect your privacy and will not spam you.</small>
                         </div>
                     </div> 
                 </div> 
@@ -265,7 +281,7 @@
         <!--/Section: Overlap -->
 
 
-        <!--Section: Listings-->
+        <!--Section: Featured Companies -->
         
         <section id="counters"> 
             
@@ -273,136 +289,108 @@
                 
             </div> 
          
-            <div class="row" style="padding:0;">
-                <h2 class="mx-auto">Featured Companies</h2>
-            </div>
-            <div class="row white-text">
-                <!--First columnn-->
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style="min-height: 250px;"> 
-                    <!--Card 1-->
-                        <div class="card" style="background-color:#37474f;opacity:0.8;"> 
-                            <!--Card content-->
-                            <div class="card-block">
-                                <!--Title-->
-                                <h4 class="card-title">Cloud Computing</h4>
-                                <!--Text-->
-                                <p class="card-text">$ 10,000 MRR<br>5 Employees<br>Estonia</p>
-                                <a id="show-contact-1" class="btn btn-primary-default btn-link text-right mdl-button mdl-button--raised mdl-js-button">Show Contact</a> 
-                            </div>
-                            <!--/.Card content-->
+                <section class="featured-companies">
+                    <h2 class="mx-auto">Featured Companies</h2>    
+                    <div class="slider">
+                        <div>
+                            <article> 
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <!--Card 1-->
+                                    <div class="card" style="background-color:#37474f;color:#fff;opacity:0.3;"> 
+                                        <!--Card content-->
+                                        <div class="card-block">
+                                            <!--Title-->
+                                            <h4 class="card-title">Cloud Computing</h4>
+                                            <!--Text-->
+                                            <p class="card-text">&#36;35-37K MRR<br>Cash positive<br>Negative churn rate<br>&#36;2.4M valuation<br>United States</p>
+                                            <a href="requests/id29-contacts.html" style="color: white !important;text-decoration: underline;" class="btn btn-primary-default btn-link text-right" target="_blank">Request Contact</a>
+                                        </div>
+                                        <!--/.Card content-->
+                                    </div>
+                                <!--/.Card -->
+                                </div>
+                            </article>
                         </div>
-                    <!--/.Card -->
-                </div>
-                <!--First columnn-->
-
-                <!--Second columnn-->
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style="min-height: 250px;"> 
-                    <!--Card 2-->
-                        <div class="card" style="background-color:#37474f;opacity:0.8;"> 
-                            <!--Card content-->
-                            <div class="card-block">
-                                <!--Title-->
-                                <h4 class="card-title">Cloud Computing</h4>
-                                <!--Text-->
-                                <p class="card-text">$ 10,000 MRR<br>5 Employees<br>Estonia</p>
-                                <a id="show-contact-2" class="btn btn-primary-default btn-link text-right mdl-button mdl-button--raised mdl-js-button">Show Contact</a>
-                            </div>
-                            <!--/.Card content-->
+                        <div>
+                            <article> 
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <!--Card 2-->
+                                    <div class="card" style="background-color:#37474f;color:#fff;opacity:0.3;"> 
+                                        <!--Card content-->
+                                        <div class="card-block">
+                                            <!--Title-->
+                                            <h4 class="card-title">FinTech</h4>
+                                            <!--Text-->
+                                            <p class="card-text">&#36;150K ARR<br>30% m-o-m growth<br>LTV:CAC 7x<br>&#36;5M valuation<br>Canada</p>
+                                            <a href="requests/id145-contacts.html" style="color: white !important;text-decoration: underline;" class="btn btn-primary-default btn-link text-right" target="_blank">Request Contact</a>
+                                        </div>
+                                        <!--/.Card content-->
+                                    </div>
+                                <!--/.Card --> 
+                                </div>
+                            </article>
                         </div>
-                    <!--/.Card -->
-                </div>
-                <!--Second columnn-->
-
-                <!--Third columnn-->
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style="min-height: 250px;"> 
-                    <!--Card 3-->
-                        <div class="card" style="background-color:#37474f;opacity:0.8;"> 
-                            <!--Card content-->
-                            <div class="card-block">
-                                <!--Title-->
-                                <h4 class="card-title">Cloud Computing</h4>
-                                <!--Text-->
-                                <p class="card-text">$ 10,000 MRR<br>5 Employees<br>Estonia</p>
-                                <a id="show-contact-3" class="btn btn-primary-default btn-link text-right mdl-button mdl-button--raised mdl-js-button">Show Contact</a>
-                            </div>
-                            <!--/.Card content-->
+                        <div>
+                            <article> 
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <!--Card 3-->
+                                    <div class="card" style="background-color:#37474f;color:#fff;opacity:0.3;"> 
+                                        <!--Card content-->
+                                        <div class="card-block">
+                                            <!--Title-->
+                                            <h4 class="card-title">Marketplace</h4>
+                                            <!--Text-->
+                                            <p class="card-text">&#163;60K Revenue in 1Q’17<br>90% of all transactions - one-offs</br>LTV:CAC 8x</br>&#36;2M valuation<br>United Kingdom</p>
+                                            <a href="requests/id267-contacts.html" style="color: white !important;text-decoration: underline;" class="btn btn-primary-default btn-link text-right" target="_blank">Request Contact</a>
+                                        </div>
+                                        <!--/.Card content-->
+                                    </div>
+                                <!--/.Card --> 
+                                </div>
+                            </article>
                         </div>
-                    <!--/.Card -->
-                </div>
-                <!--Third columnn--> 
-
-                                <!-- Modal Dialogs to request seller contact --> 
-                                    <dialog id="request-contact-1" class="mdl-dialog">
-                                        <div class="mdl-dialog__actions">
-                                            <button type="button" class="close" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>                            
+                        <div>
+                            <article> 
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <!--Card 3-->
+                                    <div class="card" style="background-color:#37474f;color:#fff;opacity:0.3;"> 
+                                        <!--Card content-->
+                                        <div class="card-block">
+                                            <!--Title-->
+                                            <h4 class="card-title">HR Tech</h4>
+                                            <!--Text-->
+                                            <p class="card-text">&#36;200K ARR<br>Break even already<br>Churn >10%<br>&#36;5M valuation<br>Estonia</p>
+                                            <a href="requests/id567-contacts.html" style="color: white !important;text-decoration: underline;" class="btn btn-primary-default btn-link text-right" target="_blank">Request Contact</a>
                                         </div>
-                                      <h2 class="mdl-dialog__title text-center">Request Seller's Contact</h2>
-                                      <div class="mdl-dialog__content">
-                                          <div class="row" style="padding-top:0; padding-bottom: 0;">
-                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                                <form id="subscribe" data-toggle="validator" role="form">
-                                                    <div class="md-form input-group" style="margin: 20px 0;width: 100%;">
-                                                        <input type="email" id="free-data" class="form-control validate" placeholder="example@gmail.com">
-                                                    </div>
-                                                    <div class="md-form input-group" style="margin: 20px 0;width: 100%;">
-                                                        <button class="btn btn-primary btn-lg" type="button" style="width: 100%;margin-left:0;margin-right:0">Request</button>
-                                                    </div>
-                                                </form>
-                                            </div>
+                                        <!--/.Card content-->
+                                    </div>
+                                <!--/.Card --> 
+                                </div>
+                            </article>
+                        </div>
+                        <div>
+                            <article> 
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <!--Card 3-->
+                                    <div class="card" style="background-color:#37474f;color:#fff;opacity:0.3;"> 
+                                        <!--Card content-->
+                                        <div class="card-block">
+                                            <!--Title-->
+                                            <h4 class="card-title">IoT</h4>
+                                            <!--Text-->
+                                            <p class="card-text">&#36;6.5K MRR</br>500К MAU<br>&#36;3.5M valuation<br>Uber among clients<br>Germany</p>
+                                            <a href="requests/id987-contacts.html" style="color: white !important;text-decoration: underline;" class="btn btn-primary-default btn-link text-right" target="_blank">Request Contact</a>
                                         </div>
-                                      </div>
-                                    </dialog>
-                                    <dialog id="request-contact-2" class="mdl-dialog">
-                                        <div class="mdl-dialog__actions">
-                                            <button type="button" class="close" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>                            
-                                        </div>
-                                      <h2 class="mdl-dialog__title text-center">Request Seller's Contact</h2>
-                                      <div class="mdl-dialog__content">
-                                          <div class="row" style="padding-top:0;padding-bottom: 0;">
-                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                                <form id="subscribe" data-toggle="validator" role="form">
-                                                    <div class="md-form input-group" style="margin: 20px 0;width: 100%;">
-                                                        <input type="email" id="free-data" class="form-control validate" placeholder="example@gmail.com">
-                                                    </div>
-                                                    <div class="md-form input-group" style="margin: 20px 0;width: 100%;">
-                                                        <button class="btn btn-primary btn-lg" type="button" style="width: 100%;margin-left:0;margin-right:0">Request</button>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                      </div>
-                                    </dialog>
-                                    <dialog id="request-contact-3" class="mdl-dialog">
-                                        <div class="mdl-dialog__actions">
-                                            <button type="button" class="close" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>                            
-                                        </div>
-                                      <h2 class="mdl-dialog__title text-center">Request Seller's Contact</h2>
-                                      <div class="mdl-dialog__content">
-                                          <div class="row" style="padding-top:0;padding-bottom: 0;">
-                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                                <form id="subscribe" data-toggle="validator" role="form">
-                                                    <div class="md-form input-group" style="margin: 20px 0;width: 100%;">
-                                                        <input type="email" id="free-data" class="form-control validate" placeholder="example@gmail.com">
-                                                    </div>
-                                                    <div class="md-form input-group" style="margin: 20px 0;width: 100%;">
-                                                        <button class="btn btn-primary btn-lg" type="button" style="width: 100%;margin-left:0;margin-right:0">Request</button>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                      </div>
-                                    </dialog> 
-                                <!--/: Modal Dialogs to request seller contact -->
-            </div>
-            <!--/Section: Listings-->
+                                        <!--/.Card content-->
+                                    </div>
+                                <!--/.Card -->  
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </section> 
         </section>
-        <!--/Section: Counters--> 
+        <!--/Section: Featured Companies-->
 
 
         <!--Section: Buyers-->
@@ -414,9 +402,8 @@
                     <p class="white-text" style="font-size: 24px;line-height: 32px; font-weight:200;">
                         SaaSNomad is the place where you can find the SaaS</br>to buy according to your industrial and geographic focus.
                     </p>
-                    <a id="buyer" class="btn btn-outline-success mdl-button--raised mdl-js-button dialog-button">Subscribe</a>
-                    
-                        
+                    <a id="buyer" class="btn btn-outline-success" data-toggle="modal" data-target="#buyerModal" style="background-color:#64ffda; color: #37474f !important;">Get notified</a>
+                    <a id="" href="coming-soon.html" class="btn btn-outline-success mdl-button--raised mdl-js-button dialog-button">Find SaaS</a> 
                 </div>
                 <div class="col-lg-1 col-md-1 col-sm-1 hidden-xs"></div>
             </div>
@@ -426,22 +413,22 @@
         
         <!--Section: About-->
         <section id="about">
-            <div class="row" style="padding-bottom:0;">
+            <div class="row" style="padding-bottom:0; display: -webkit-flex; -webkit-align-items: center;">
                 <h2 class="mx-auto">How it Works</h2>
             </div> 
 
                                         <div class="row">
                                             <div class="col-lg-6 col-md-6 col-sm-6 hidden-xs-down" style="padding-right: 0;">
                                                     <blockquote class="blockquote bq-primary">
-                                                        <p class="bq-title" style="padding:0">Step 1</p>
+                                                        <p class="bq-title text-muted" style="padding:0">Step 1</p>
                                                         <h4 style="padding:0;Margin-bottom:0">Apply for Free</h4>
                                                     </blockquote>
                                                     <blockquote class="blockquote bq-primary">
-                                                        <p class="bq-title" style="padding:0">Step 2</p>
+                                                        <p class="bq-title text-muted" style="padding:0">Step 2</p>
                                                         <h4 style="padding:0;Margin-bottom:0">Buyers Get Notified</h4>
                                                     </blockquote>
                                                     <blockquote class="blockquote bq-primary">
-                                                        <p class="bq-title" style="padding:0">Step 3</p>
+                                                        <p class="bq-title text-muted" style="padding:0">Step 3</p>
                                                         <h4 style="padding:0;Margin-bottom:0">Receive Offers</h4>
                                                     </blockquote>
                                                 </div>
@@ -461,7 +448,7 @@
         <section id="news" class="text-center">
 
             <div class="row" style="padding-bottom:0;">
-                <h2 class="mx-auto" style="margin-bottom:0;">Latest articles on SaaS M&A</h2>
+                <h2 class="mx-auto" style="margin-bottom:0;text-align: -webkit-center;">Latest articles on SaaS M&A</h2>
             </div>
             <div class="row" style="padding-top:0;">
                 <div class="col-lg-1 col-md-1 col-sm-1 hidden-xs"></div>
@@ -477,13 +464,13 @@
                                                             <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12" style="padding: 40px;background-color: #fff;border-top-left-radius: 6px;    border-bottom-left-radius: 6px;">
                                                                 <div id="wrapper" style="max-height:450px;height:auto;overflow-y:scroll;">
                                                                     <div class="news-item">
-                                                                        <a href="https://techcrunch.com/gallery/the-11-biggest-tech-acquisitions-of-2016/" class="article"  target="_blank">
+                                                                        <a href="https://techcrunch.com/gallery/the-11-biggest-tech-acquisitions-of-2016/" class="article" target="_blank">
                                                                             <h4>The 11 biggest tech acquisitions of 2016</h4>
                                                                             <span class="text-muted">Jan 3, 2017 <b>Techcrunch</b></span>
                                                                         </a>
                                                                     </div>  
                                                                     <div class="news-item">
-                                                                        <a href="https://techcrunch.com/2016/11/21/what-does-trump-mean-for-tech-ma/" class="article"  target="_blank">
+                                                                        <a href="https://techcrunch.com/2016/11/21/what-does-trump-mean-for-tech-ma/" class="article" target="_blank">
                                                                             <h4>What does Trump mean for tech M&A?</h4>
                                                                             <span class="text-muted">Nov 21, 2016 <b >Techcrunch</b></span>
                                                                         </a> 
@@ -495,7 +482,7 @@
                                                                         </a> 
                                                                     </div>  
                                                                     <div class="news-item">
-                                                                        <a href="https://techcrunch.com/gallery/the-11-biggest-tech-acquisitions-of-2016/" class="article"  target="_blank">
+                                                                        <a href="https://techcrunch.com/gallery/the-11-biggest-tech-acquisitions-of-2016/" class="article" target="_blank">
                                                                             <h4>The 11 biggest tech acquisitions of 2016</h4>
                                                                             <span class="text-muted">Jan 3, 2017 <b>Techcrunch</b></span>
                                                                         </a>
@@ -587,10 +574,15 @@
                                                             </div>                               
                                                             <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 white-text" style="padding:60px;background: #37474f;opacity:0.8;display: flex;align-items: center;border-top-right-radius: 6px;border-bottom-right-radius: 6px;">
                                                                 <div>
-                                                                    <p style="margin-bottom: 15px;">You can subscribe for the latest SaaS M&A news. Just enter your Email and we will send it to your Inbox weekly.</p>
+                                                                    <p style="margin-bottom: 15px;">Subscribe here and we will keep you in the loop on the latest SaaS M&A news.</p>
                                                                     <form id="subscribe" data-toggle="validator" role="form">
                                                                         <div class="md-form input-group" style="margin: 20px 0;width: 100%;">
-                                                                            <input type="email" id="free-data" class="form-control validate change" placeholder="Example@gmail.com" style="color:#fff;">
+                                                                            <input type="email" id="news-subscription" class="form-control validate change" placeholder="example@myemaildomain.com" style="color:#fff;">
+                                                                            <label for="news-subscription">Email</label>
+                                                                        </div>
+                                                                        <!--Country-->
+                                                                        <div class="md-form form-group" style="margin-top: 44px;display:none;">
+                                                                            <input type="text" name="news_country" class="geotext[country]" id="news_country" class="form-control"> 
                                                                         </div>
                                                                         <div class="md-form input-group" style="margin: 20px 0;width: 100%;">
                                                                             <button class="btn btn-primary btn-lg" type="button" style="width: 100%;margin-left:0;margin-right:0">Subscribe</button>
@@ -620,8 +612,8 @@
                 <div class="col-lg-1 col-md-1 col-sm-1 hidden-xs"></div>
                 <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12" style="display: flex;align-items: center;color: rgba(255,255,255,0.5);">
 
-                    <a href="index.html" class="mb-1 logo" style="font-size:25px; margin: 0 !important;"><b>SaaSNomad</b></a>
-                    <ul>
+                    <a href="main.html" class="mb-1 logo" style="font-size:25px; margin: 0 !important;"><b>SaaSNomad</b></a>
+                    <ul style="display:inline-block;">
                         <li>
                           <a href="faq.html" target="_blank" class="text-uppercase">
                             <b>FAQ</b>
@@ -646,39 +638,37 @@
             </div>   
         </footer>
     <!--/.Footer-->
+<!-- MODALS -->
 
-    <!-- MODALS -->
-
-                                    <dialog id="seller-dialog" class="mdl-dialog" style="width: 35%">
-                                        <div class="mdl-dialog__actions">
-                                            <button type="button" class="close" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>                            
-                                        </div>
-                                      <h2 class="mdl-dialog__title text-center">Seller Application</h2>
-                                      <div class="mdl-dialog__content">
-                                          <div class="row" style="padding-top:0;padding-bottom: 0;">
-                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+<!-- Seller Modal -->
+<div class="modal fade" id="sellerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <!--Content-->
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="position: absolute; right: 10px; top: 10px;">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="modal-body">
+                <h2 class="text-center">Seller Application</h2>
                                                 <form id="sellers" action="add-seller.php" method="POST" id="msform" role="form" data-toggle="validator">
 
                                                     <!--Name--> 
                                                     <div class="md-form form-group">
                                                         <input placeholder="John Doe" type="text" name="seller_name" id="buyer_name" class="form-control validate" maxlength="50" required>
-                                                        <label for="name">Name</label>
+                                                        <label for="name">Name *</label>
                                                         <div class="help-block with-errors"></div>
                                                     </div> 
                                                     <!--Email-->
                                                     <div class="md-form form-group">
-                                                        <input placeholder="Example@company.com" type="email" name="seller_email" id="buyer_email" class="form-control validate" maxlength="50" required>
-                                                        <label for="buyer_email">Email</label>
+                                                        <input placeholder="example@myemaildomain.com" type="email" name="seller_email" id="buyer_email" class="form-control validate" maxlength="50" required>
+                                                        <label for="buyer_email">Email *</label>
                                                         <div class="help-block with-errors"></div> 
                                                     </div>  
                                                     <!--Country-->
                                                     <div class="md-form form-group" style="margin-top: 44px;display:none;">
                                                         <input placeholder="Country" type="text" name="seller_country" class="geotext[country]" id="countries" class="form-control validate" aria-describedby="basic-addon2">
-                                                        <label for="country" style="top: 8px;">Country</label> 
-                                                        <div class="help-block with-errors"></div>
                                                     </div>  
+                                                    <!--Industry-->
                                                      <div class="md-form form-group" id="multiselect" style="width: 100%;top: -7px;">  
                                                         <label for"industry" style="font-size: 0.8rem;position: relative;z-index: 1000;top:4px;">Industry</label>
                                                         <select id="seller_industry" name="seller-industry" data-placeholder="Industry" class="chosen-select form-control validate" multiple tabindex="4" id="industry" name="industry">
@@ -749,41 +739,37 @@
                                                     </div>
 
                                                 </form>
-                                                <div id="preloader" style="display:none;" class="text-center"><img src="img/preloader.gif"></div>
-                                            </div>
-                                        </div>
-                                      </div>
-                                    </dialog>
-
-
-
-
-
-
-                        <dialog id="buyer-dialog" class="mdl-dialog" style="width: 35%;z-index:1;">
-                            <div class="mdl-dialog__actions">
-                                <button type="button" class="close" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>                            
-                            </div>
-
-                          <h2 class="mdl-dialog__title ">Subscribe for new Listings</h2>
-                          <small style="display:block;margin-top: 1rem;margin-bottom: -1rem;" class="text-center">Your information is confidential and will not be sent to</br>the sellers or shown on the website</small>
-                          <div class="mdl-dialog__content">
-                              <div class="row" style="padding-top:0; padding-bottom: 0;"> 
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            </div> 
+        </div>
+        <!--/.Content-->
+    </div>
+</div>
+<!-- Modal -->
+<!-- Buyer Modal -->
+<div class="modal fade" id="buyerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <!--Content-->
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="position: absolute; right: 10px; top: 10px;">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <!--Body-->
+            <div class="modal-body">
+                <h2 class="text-center">Get notified about new Featured Companies</h2>
+                          <small style="display:block;margin: 1rem 0;" class="text-center">Your information is confidential and will not be sent to</br>the sellers or shown on the website</small>
+                              
                                     <form id="buyers" action="add-buyer.php" method="post" id="msform" role="form" data-toggle="validator">
 
                                         <!--Name--> 
                                         <div class="md-form form-group">
                                             <input placeholder="John Doe" type="text" name="buyer_name" id="buyer_name" class="form-control validate" maxlength="50" required>
-                                            <label for="name">Name</label>
+                                            <label for="name">Name *</label>
                                             <div class="help-block with-errors"></div>
                                         </div> 
                                         <!--Email-->
                                         <div class="md-form form-group">
-                                            <input placeholder="Example@company.com" type="email" name="buyer_email" id="buyer_email" class="form-control validate" maxlength="50" required>
-                                            <label for="buyer_email">Email</label>
+                                            <input placeholder="example@myemaildomain.com" type="email" name="buyer_email" id="buyer_email" class="form-control validate" maxlength="50" required>
+                                            <label for="buyer_email">Email *</label>
                                             <div class="help-block with-errors"></div> 
                                         </div> 
                                          <!--Country-->
@@ -791,59 +777,7 @@
                                             <input placeholder="Country" type="text" name="buyer_country" class="geotext[country]" id="countries" class="form-control validate" aria-describedby="basic-addon2">
                                             <label for="country" style="top: 8px;">Country</label> 
                                             <div class="help-block with-errors"></div>
-                                        </div> 
-                                        <!--Company-->
-                                        <div class="md-form form-group">
-                                            <input placeholder="Company" type="text" name="buyer_company" id="buyer_company" class="form-control validate" maxlength="50">
-                                            <label for="buyer_company">Company Name</label>
-                                            <div class="help-block with-errors"></div>
-                                        </div>
-                                        <!-- Industry--> 
-                                         <div class="md-form form-group" id="multiselect" style="width: 100%;top: -7px;">  
-                                            <label for"industry" style="font-size: 0.8rem;position: relative;z-index: 1000;top:4px;">Industry Focus</label>
-                                            <select data-placeholder="Industry" name="buyer_industry" id="buyer_industry" class="chosen-select form-control validate" multiple tabindex="4" id="industry" name="industry">
-                                                <option value=""></option>
-                                                <option value="AdTEch">AdTEch</option>
-                                                <option value="AI">AI</option>
-                                                <option value="Big Data">Big Data</option>
-                                                <option value="Business Intelligence">Business Intelligence</option>
-                                                <option value="HR Tech">HR Tech</option>
-                                                <option value="Classifieds">Classifieds</option>
-                                                <option value="CleanTech">CleanTech</option>
-                                                <option value="Cloud Computing">Cloud Computing</option>
-                                                <option value="Customer Support">Customer Support</option>
-                                                <option value="Data Science">Data Science</option>
-                                                <option value="Dating">Dating</option>
-                                                <option value="E-Commerce">E-Commerce</option>
-                                                <option value="EdTech">EdTech</option>
-                                                <option value="Digital Marketing">Digital Marketing</option>
-                                                <option value="Fashion">Fashion</option>
-                                                <option value="FinTech">FinTech</option>
-                                                <option value="Fitness &#38; Wellness">Fitness &#38; Wellness</option>
-                                                <option value="Food &#38; Beverages">Food &#38; Beverages</option>
-                                                <option value="Funerals">Funerals</option>
-                                                <option value="Gaming">Gaming</option>
-                                                <option value="Government">Government</option> 
-                                                <option value="Health Tech">Health Tech</option>
-                                                <option value="Hospitality">Hospitality</option>
-                                                <option value="Human Resources">Human Resources</option>
-                                                <option value="Insurance">Insurance</option>
-                                                <option value="Internet of Things">Internet of Things</option>
-                                                <option value="Legal">Legal</option>
-                                                <option value="Market Research">Market Research</option>
-                                                <option value="Media">Media</option>
-                                                <option value="Music">Music</option>
-                                                <option value="Publishing">Publishing</option>
-                                                <option value="Security">Security</option>
-                                                <option value="Social Networking">Social Networking</option>
-                                                <option value="Storage">Storage</option>
-                                                <option value="Technical Support">Technical Support</option>
-                                                <option value="Telecommunications">Telecommunications</option>
-                                                <option value="Transportation">Transportation</option>
-                                                <option value="Travel">Travel</option>
-                                            </select>
-                                            <div class="help-block with-errors"></div>
-                                        </div>   
+                                        </div>  
                                         <!-- Checkbox -->
                                                     <div class="md-form form-group" style="margin-bottom: 2.5rem;">
                                                         <div class="rkmd-checkbox checkbox-ripple">
@@ -858,21 +792,28 @@
                                                         </div>
                                                     </div>
                                         <div class="md-form input-group" style="margin: .1rem 0;width: 100%;">
-                                            <button class="btn btn-primary" type="submit" style="width: 100%;margin:0">Subscribe</button>
+                                            <button class="btn btn-primary" type="submit" style="width: 100%;margin:0">Get notified</button>
                                         </div>
                                     </form>
+            </div>
+            
+        </div>
+        <!--/.Content-->
+    </div>
+</div>
+<!-- Modal -->
 
-                                </div>
-                            </div>
-                          </div>
-                        </dialog>
+    
 
 
     <!-- SCRIPTS -->
     <!-- Load jquery via CDN -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> 
-    <!-- Checkbox -->
-    <script src="js/checkbox.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>  
+    <!-- Carousel -->
+    <script src="js/slick.min.js"></script>
+    <script src="js/slick.js"></script> 
+    <!-- Checkbox --> 
+    <script type="text/javascript" src="js/checkbox.js"></script>
     <!-- Select Jquery Chosen Plugin-->
     <script src="js/chosen/chosen.jquery.js" type="text/javascript"></script>
     <script src="js/chosen/init.js" type="text/javascript" charset="utf-8"></script>
@@ -924,22 +865,15 @@
         }, 600);
         return false;
     });
-    </script>
-    <!-- Multistep Form 
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
-    <script src="js/multistep-form.js"></script> -->    
+    </script> 
     <!-- Bootstrap core JavaScript -->
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="js/mdb.js"></script>
-    <!-- Checkbox -->
-    <script type="text/javascript" src="js/checkbox.js"></script>
     <!-- Animations init-->
     <script>
         new WOW().init();
     </script>   
-    <!-- Modal -->
-    <script type="text/javascript" src="js/modal.js"></script>
     <!-- Bootstrap Form validator -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
     <!-- Number formatting -->

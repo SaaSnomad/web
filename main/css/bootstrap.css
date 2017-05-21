@@ -3108,6 +3108,7 @@ input[type="button"].btn-block {
 
 .fade.show {
   opacity: 1;
+  z-index: 9999;
 }
 
 .collapse {
@@ -5416,7 +5417,7 @@ button.close {
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 1050;
+  z-index: 10000 !important;
   display: none;
   overflow: hidden;
   outline: 0;
@@ -5515,7 +5516,7 @@ button.close {
   -webkit-flex: 1 1 auto;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
-  padding: 15px;
+  padding: 50px;
 }
 
 .modal-footer {

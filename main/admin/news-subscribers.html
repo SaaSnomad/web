@@ -48,15 +48,17 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.deep_purple-pink.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/admin-style.css">
+    <link rel="stylesheet" href="css/admin-custom.css">
 
     <link rel="stylesheet" href="css/material.min.css">
     <link rel="stylesheet" href="css/dataTables.material.min.css">
-    <style> 
+    <link rel="stylesheet" href="css/buttons.dataTables.min.css">
+
+    <style>
     .mdl-layout__header-row {
       height:30px;
-    } 
+    }
     .mdl-button--raised.mdl-button--colored {
       background: #00BCD4;
     }
@@ -65,8 +67,7 @@
     }
     .mdl-button--raised mdl-button--colored {
       color:#fff;
-    } 
-
+    }
     #preloader {
         position: fixed;
         left: 0;
@@ -100,71 +101,161 @@
         <div class="mdl-layout--large-screen-only mdl-layout__header-row">
         </div>
         <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
+          <a href="calculator-results.html" class="mdl-layout__tab">Calculator Results</a>
           <a href="sellers.html" class="mdl-layout__tab">Sellers</a>
           <a href="buyers.html" class="mdl-layout__tab">Buyers</a>
-          <a href="subscribers.html" class="mdl-layout__tab">Subscribers</a>
-          <a href="analytics.html" class="mdl-layout__tab is-active">Analytics</a>
-           
+          <a href="contact-requests.html" class="mdl-layout__tab">Contact Requests</a>
+          <a href="new-features-subscribers.html" class="mdl-layout__tab">New Feature Subscribers</a>
+          <a href="news-subscribers.html" class="mdl-layout__tab is-active">News Subscribers</a>
+          <a href="add-news.html" class="mdl-layout__tab">Add News</a> 
         </div>
       </header>
 
-      <main class="mdl-layout__content">
-      <h4 style="margin: 100px 113px 0">GOOGLE ANALYTICS</h4>
-        <div class="mdl-layout__tab-panel is-active" id="overview" style="padding-top: 50px;">
-          <div id="preloader"></div>
-          
-          <section class="mdl-grid">
-            <div class="mdl-card mdl-cell mdl-cell--4-col mdl-shadow--2dp">
-              <div class="mdl-card__supporting-text">
-                <h5 style="margin: 0 0 30px;">New Visitors / Returning Visitors</h5>
-                <canvas id="firstChart"></canvas>
-              </div>
-            </div>
-            <div class="mdl-card mdl-cell mdl-cell--4-col mdl-shadow--2dp">
-              <div class="mdl-card__supporting-text">
-                <h5 style="margin: 0 0 30px;">Traffic Sources</h5>
-                <canvas id="secondChart"></canvas>
-              </div>
-            </div>
-            <div class="mdl-card mdl-cell mdl-cell--4-col mdl-shadow--2dp">
-              <div class="mdl-card__supporting-text">
-                <h5 style="margin: 0 0 30px;">Country Origin</h5>
-                <canvas id="thirdChart"></canvas>
-              </div>
-            </div>
-          </section> 
-          <section class="mdl-grid">
-            <div class="mdl-card mdl-cell mdl-cell--4-col mdl-shadow--2dp">
-              <div class="mdl-card__supporting-text">
-                <h5 style="margin: 0 0 30px;">Bounce Rate, %</h5>
-                <canvas id="fourthChart"></canvas>
-              </div>
-            </div>
-            <div class="mdl-card mdl-cell mdl-cell--4-col mdl-shadow--2dp">
-              <div class="mdl-card__supporting-text">
-                <h5 style="margin: 0 0 30px;">Intelligence Events</h5>
-                <canvas id="fifthChart"></canvas>
-              </div>
-            </div>
-            <div class="mdl-card mdl-cell mdl-cell--4-col mdl-shadow--2dp">
-              <div class="mdl-card__supporting-text">
-                <h5 style="margin: 0 0 30px;">New Sessions, %</h5>
-                <canvas id="sixthChart"></canvas>
-              </div>
-            </div>
-          </section> 
 
 
+
+
+      <main class="mdl-layout__content" style="width: 100%;">
+        <div class="mdl-layout__tab-panel is-active" id="overview">
+        <div id="preloader"></div>
+          <section class="mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+              <div class="mdl-card__supporting-text">
+                <h4>NEWS SUBSCRIBERS</h4> 
+        
+                <table id="example" class="display nowrap" cellspacing="0" width="100%">
+                  <thead>
+                      <tr>
+                          <th>Email</th>
+                          <th>Country</th>
+                          <th>Date created</th>                        
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td>System Architect</td>
+                          <td>Edinburgh</td>
+                          <td>2011/04/25</td>
+                      </tr>
+                      <tr>
+                          <td>Accountant</td>
+                          <td>Tokyo</td>
+                          <td>2011/07/25</td>
+                      </tr>
+                      <tr>
+                          <td>Junior Technical Author</td>
+                          <td>San Francisco</td>
+                          <td>2009/01/12</td>
+                      </tr>
+                      <tr>
+                          <td>Senior Javascript Developer</td>
+                          <td>Edinburgh</td>
+                          <td>2012/03/29</td>
+                      </tr>
+                      <tr>
+                          <td>Accountant</td>
+                          <td>Tokyo</td>
+                          <td>2008/11/28</td>
+                      </tr>
+                      <tr>
+                          <td>Integration Specialist</td>
+                          <td>New York</td>
+                          <td>2012/12/02</td>
+                      </tr>
+                      <tr>
+                          <td>Sales Assistant</td>
+                          <td>San Francisco</td>
+                          <td>2012/08/06</td>
+                      </tr>
+                      <tr>
+                          <td>Integration Specialist</td>
+                          <td>Tokyo</td>
+                          <td>2010/10/14</td>
+                      </tr>
+                      <tr>
+                          <td>Javascript Developer</td>
+                          <td>San Francisco</td>
+                          <td>2009/09/15</td>
+                      </tr>
+                      <tr>
+                          <td>Software Engineer</td>
+                          <td>Edinburgh</td>
+                          <td>2008/12/13</td>
+                      </tr>
+                      <tr>
+                          <td>Office Manager</td>
+                          <td>London</td>
+                          <td>2008/12/19</td>
+                      </tr>
+                      <tr>
+                          <td>Support Lead</td>
+                          <td>Edinburgh</td>
+                          <td>2013/03/03</td>
+                      </tr>
+                      <tr>
+                          <td>Regional Director</td>
+                          <td>San Francisco</td>
+                          <td>2008/10/16</td>
+                      </tr>
+                      <tr>
+                          <td>Senior Marketing Designer</td>
+                          <td>London</td>
+                          <td>2012/12/18</td>
+                      </tr>
+                      <tr>
+                          <td>Regional Director</td>
+                          <td>London</td>
+                          <td>2010/03/17</td>
+                      </tr>
+                      <tr>
+                          <td>Marketing Designer</td>
+                          <td>London</td>
+                          <td>2012/11/27</td>
+                      </tr>
+                  </tbody>
+              </table>
+
+
+
+
+
+
+              </div>
+               
+            </div>
+             
+          </section> 
       </main>
     </div>
- 
-
+  
 
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 
     <!-- jQuery 2.1.3 -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
+    <script src="js/jsdataTables.material.min.js"></script>
+    <script src="js/dataTables.buttons.min.js"></script>
+    <script src="js/buttons.flash.min.js"></script>
+    <script src="js/jszip.min.js"></script>
+    <script src="js/pdfmake.min.js"></script>
+    <script src="js/vfs_fonts.js"></script>
+    <script src="js/buttons.html5.min.js"></script>
+    <script src="js/buttons.print.min.js"></script>
+    
 
+
+    <!-- Table Exportable -->
+      <script>
+      $(document).ready(function() {
+        $('#example').DataTable( {
+            dom: 'Bfrtip',
+            buttons: [
+                'copy', 'csv', 'excel', 'pdf', 'print'
+            ]
+        } );
+    } );
+    </script>
     <script>
       jQuery(document).ready(function ($) {
         $(window).load(function () {
@@ -175,146 +266,7 @@
           });  
       });
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
 
-    <!-- First chart -->
-    <script>
-      var ctx = document.getElementById('firstChart').getContext('2d');
-      var myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-          labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
-          datasets: [{
-            label: 'apples',
-            data: [12, 19, 3, 17, 6, 3, 7],
-            backgroundColor: "rgba(153,255,51,0.4)"
-          }, {
-            label: 'oranges',
-            data: [2, 29, 5, 5, 2, 3, 10],
-            backgroundColor: "rgba(255,153,0,0.4)"
-          }]
-        }
-      });
-    </script>
-
-    <!-- Second chart -->
-    <script>
-      var ctx = document.getElementById("secondChart").getContext('2d');
-      var myChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-          labels: ["M", "T", "W", "T", "F", "S", "S"],
-          datasets: [{
-            label: 'apples',
-            data: [12, 19, 3, 17, 28, 24, 7],
-            backgroundColor: "rgba(153,255,51,1)"
-          }, {
-            label: 'oranges',
-            data: [30, 29, 5, 5, 20, 3, 10],
-            backgroundColor: "rgba(255,153,0,1)"
-          }]
-        }
-      });
-    </script>
-
-    <!-- Third chart -->
-    <script>
-        var ctx = document.getElementById("thirdChart").getContext('2d');
-        var myChart = new Chart(ctx, {
-          type: 'polarArea',
-          data: {
-            labels: ["M", "T", "W", "T", "F", "S", "S"],
-            datasets: [{
-              backgroundColor: [
-                "#2ecc71",
-                "#3498db",
-                "#95a5a6",
-                "#9b59b6",
-                "#f1c40f",
-                "#e74c3c",
-                "#34495e"
-              ],
-              data: [12, 19, 3, 17, 28, 24, 7]
-            }]
-          }
-        });
-    </script>
-
-    <!-- Fourth chart -->
-    <script>
-        var ctx = document.getElementById("fourthChart").getContext('2d');
-        var myChart = new Chart(ctx, {
-          type: 'line',
-          data: {
-            labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
-            datasets: [{
-              label: 'apples',
-              data: [12, 19, 3, 17, 6, 3, 7],
-              backgroundColor: "rgba(153,255,51,0.4)"
-            }, {
-              label: 'oranges',
-              data: [2, 29, 5, 5, 2, 3, 10],
-              backgroundColor: "rgba(255,153,0,0.4)"
-            }]
-          }
-        });
-    </script>
-
-    <!-- Fifth chart -->
-    <script>
-        var ctx = document.getElementById("fifthChart").getContext('2d');
-        var myChart = new Chart(ctx, {
-          type: 'doughnut',
-          data: {
-            labels: ["M", "T", "W", "T", "F", "S", "S"],
-            datasets: [{
-              backgroundColor: [
-                "#2ecc71",
-                "#3498db",
-                "#95a5a6",
-                "#9b59b6",
-                "#f1c40f",
-                "#e74c3c",
-                "#34495e"
-              ],
-              data: [12, 19, 3, 17, 28, 24, 7]
-            }]
-          }
-        });
-    </script>
-
-    <!-- Sixth chart -->
-    <script>
-        var ctx = document.getElementById("sixthChart").getContext('2d');
-        var myChart = new Chart(ctx, {
-          type: 'bar',
-          data: {
-            labels: ["M", "T", "W", "T", "F", "S", "S"],
-            datasets: [{
-              label: 'apples',
-              data: [12, 19, 3, 17, 28, 24, 7],
-              backgroundColor: "rgba(153,255,51,1)"
-            }, {
-              label: 'oranges',
-              data: [30, 29, 5, 5, 20, 3, 10],
-              backgroundColor: "rgba(255,153,0,1)"
-            }]
-          }
-        });
-    </script> 
-
-
-
-
-
-
-
-
-    <style>
-      .mdl-cell mdl-cell--4-col{
-      width: 200% !important;
-      color: rgba(0,0,0,.54);
-    }
-    </style>
+ 
   </body>
 </html>
